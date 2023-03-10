@@ -2,6 +2,7 @@ import Header from "@/components/header";
 import MetaData from "@/components/metadatas";
 import ProductCard from "@/components/productCard";
 import SearchBar from "@/components/searchBar";
+import ShortCutButton from "@/components/shortcutButton";
 import { fetchProducts } from "@/services/products/products.services";
 import { useEffect, useState } from "react";
 
@@ -23,9 +24,15 @@ export default function Index() {
         Eco score
       </h1>
       <SearchBar />
-      {data.map((product: any) => (
+      <div>
+        <ShortCutButton
+          src={require("../../public/assets/icons/iconClothes.png")}
+          alt="icon"
+        />
+      </div>
+      {/* {data.map((product: any) => (
         <ProductCard title={product.title} key={product.id} />
-      ))}
+      ))} */}
     </div>
   );
 }

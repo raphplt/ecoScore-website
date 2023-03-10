@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import { fetchProducts } from "@/services/products/products.services";
 
 export default function SearchBar(props: any) {
   const [searchQuery, setSearchQuery] = useState("");
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const products = await fetchProducts();
+      setData(products);
+    }
+    fetchData();
+  }, []);
 
   const handleSubmit = (event: any) => {
     event.preventDefault();

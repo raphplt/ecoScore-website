@@ -31,7 +31,7 @@ export default function SearchBar(props: any) {
         onChange={(event) => setSearchQuery(event.target.value)}
       />
       <button
-        className="flex-shrink-0 bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-sm border-4 text-white py-1 px-2 rounded"
+        className="flex-shrink-0 bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-sm border-4 text-white py-1 px-2 rounded-xl"
         type="submit"
       >
         <MagnifyingGlassIcon className="h-4 w-4" />

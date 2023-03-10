@@ -4,6 +4,7 @@ import ProductCard from "@/components/productCard";
 import SearchBar from "@/components/searchBar";
 import ShortCutButton from "@/components/shortcutButton";
 import { fetchProducts } from "@/services/products/products.services";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Index() {
@@ -20,13 +21,41 @@ export default function Index() {
     <div>
       <MetaData />
       <Header />
-      <h1 className="text-[64px] mt-20 font-bold text-center mb-12">
+      <h1 className="text-[64px] mt-20 font-bold text-center mb-12 ">
         Eco score
       </h1>
       <SearchBar />
-      <div>
+      <div className="w-[30%] mx-auto flex gap-5 justify-center flex-wrap mt-10">
         <ShortCutButton
-          src={require("../../public/assets/icons/iconClothes.png")}
+          src={require("../../public/assets/icons/icon-clothes.png")}
+          alt="icon"
+        />
+        <ShortCutButton
+          src={require("../../public/assets/icons/icon-food.png")}
+          alt="icon"
+        />
+        <ShortCutButton
+          src={require("../../public/assets/icons/icon-IT.png")}
+          alt="icon"
+        />
+        <ShortCutButton
+          src={require("../../public/assets/icons/icon-makeup.png")}
+          alt="icon"
+        />
+        <ShortCutButton
+          src={require("../../public/assets/icons/icon-clothes.png")}
+          alt="icon"
+        />
+        <ShortCutButton
+          src={require("../../public/assets/icons/icon-food.png")}
+          alt="icon"
+        />
+        <ShortCutButton
+          src={require("../../public/assets/icons/icon-IT.png")}
+          alt="icon"
+        />
+        <ShortCutButton
+          src={require("../../public/assets/icons/icon-makeup.png")}
           alt="icon"
         />
       </div>

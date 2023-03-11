@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import MetaData from "@/components/metadatas";
 import ProductCard from "@/components/productCard";
@@ -21,7 +22,7 @@ export default function Index() {
     <div>
       <MetaData />
       <Header />
-      <h1 className="text-[64px] mt-20 font-bold text-center mb-12 ">
+      <h1 className="text-[64px] text-green-600 mt-20 font-bold text-center mb-12 ">
         Eco score
       </h1>
       <SearchBar />
@@ -59,6 +60,7 @@ export default function Index() {
           alt="icon"
         />
       </div>
+      <Footer />
       {/* {data.map((product: any) => (
         <ProductCard title={product.title} key={product.id} />
       ))} */}

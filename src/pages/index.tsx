@@ -60,10 +60,25 @@ export default function Index() {
           alt="icon"
         />
       </div>
-      <Footer />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       {/* {data.map((product: any) => (
         <ProductCard title={product.title} key={product.id} />
       ))} */}
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 }

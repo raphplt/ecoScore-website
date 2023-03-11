@@ -29,7 +29,7 @@ const TopButton: React.FC<TopButtonProps> = ({ src, alt }) => {
 
   return (
     <button
-      className={"absolute top-full right-5 py-5 focus:outline-none opacity-100 hover:opacity-75 transition-opacity duration-300${isVisible ? 'visible' : 'invisible'}"}
+      className={"absolute top-auto right-5 py-5 focus:outline-none opacity-100 hover:opacity-75 transition-opacity duration-300${isVisible ? 'visible' : 'invisible'}"}
       onClick={handleClick}
     >
     <Image src={src} alt={alt} />

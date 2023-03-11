@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 
 export default function Discover() {
@@ -5,6 +6,10 @@ export default function Discover() {
     <div>
       <Header />
       <p>C&#39;est la page de découverte</p>
+      <br />
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 }

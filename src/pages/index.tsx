@@ -22,11 +22,11 @@ export default function Index() {
     <div>
       <MetaData />
       <Header />
-      <h1 className="text-[64px] text-green-600 mt-20 font-bold text-center mb-12 ">
+      <h1 className="text-[64px] text-[color:var(--primary-color)] mt-20 font-bold text-center mb-12 ">
         Eco score
       </h1>
       <SearchBar />
-      <div className="w-[30%] mx-auto flex gap-5 justify-center flex-wrap mt-10">
+      <div className="w-[30%] mx-auto flex gap-5 justify-center flex-wrap mt-10 mb-[500px]">
         <ShortCutButton
           src={require("../../public/assets/icons/icon-clothes.png")}
           alt="icon"
@@ -60,24 +60,11 @@ export default function Index() {
           alt="icon"
         />
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+
       {/* {data.map((product: any) => (
         <ProductCard title={product.title} key={product.id} />
       ))} */}
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+
       <Footer />
     </div>
   );

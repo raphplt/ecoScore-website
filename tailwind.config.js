@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         sans: ["Lato", "sans-serif"],
       },
+      colors: {
+        "primary-color": "var(--primary-color)",
+      },
     },
   },
   plugins: [],

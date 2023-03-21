@@ -27,10 +27,9 @@ export default function Header() {
           <Link href={"./quizz"}>Quizz</Link>
         </div>
       </div>
-      <Image
-        src={require("../../public/assets/profilIcon.png")}
-        alt="logo    "
-      />
+      <Link href={"./login"}>
+        <Image src={require("../../public/assets/profilIcon.png")} alt="logo" />
+      </Link>
     </div>
   );
 }

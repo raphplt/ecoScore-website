@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="flex flex-row items-center justify-between w-[90%] mx-auto mt-2">
+    <div className="flex flex-row items-center justify-between w-[90%] mx-auto pt-2">
       <Link href={"./"}>
         <Image
           src={require("../../public/assets/ecoscoreLogo.png")}

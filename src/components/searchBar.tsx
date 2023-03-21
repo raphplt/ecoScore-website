@@ -21,7 +21,7 @@ export default function SearchBar(props: any) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-center border-b-2 border-green-500 hover:border-green-600 py-2 w-[30%] h-10 mx-auto"
+      className="flex items-center border-b-2 border-secondary-color hover:border-green-600 py-2 w-[30%] h-10 mx-auto"
     >
       <input
         className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
@@ -31,7 +31,7 @@ export default function SearchBar(props: any) {
         onChange={(event) => setSearchQuery(event.target.value)}
       />
       <button
-        className="flex-shrink-0 bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-sm border-4 text-white py-1 px-2 rounded-xl"
+        className="flex-shrink-0 bg-secondary-color hover:bg-green-700 border-secondary-color hover:border-green-700 text-sm border-4 text-white py-1 px-2 rounded-xl"
         type="submit"
       >
         <MagnifyingGlassIcon className="h-4 w-4" />

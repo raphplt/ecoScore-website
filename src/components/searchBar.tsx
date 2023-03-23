@@ -6,17 +6,16 @@ export default function SearchBar(props: any) {
   const [searchQuery, setSearchQuery] = useState("");
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const products = await fetchProducts();
-      setData(products);
-    }
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const products = await fetchProducts();
+  //     setData(products);
+  //   }
+  //   fetchData();
+  // }, []);
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    // Recherchez ici avec la chaîne de recherche "searchQuery"
   };
   return (
     <form

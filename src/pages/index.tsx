@@ -68,6 +68,24 @@ return (
         alt="icon"
       />
     </div>
+    <div className="grid grid-cols-2 grid-rows-3 w-full">
+      <div className=" h-96">
+        <h3 className="text-center text-2xl">Lorem Ipsum</h3>
+      </div>
+      <div className=" h-96">
+        <div className="rounded-[50%] w-48 h-48 bg-green-200 mx-auto"></div>
+      </div>
+      <div className=" h-96">
+        <div className="rounded-[50%] w-48 h-48 bg-green-200 mx-auto"></div>
+      </div>
+      <div className="h-96">
+        <h3 className="text-center text-2xl">Lorem Ipsum</h3>
+      </div>
+      <div className=" h-96">
+        <h3 className="text-center text-2xl">Lorem Ipsum</h3>
+      </div>
+      <div className="h-96"></div>
+    </div>
     <button
       onClick={() => changeColor()}
       className=" bg-slate-500 border-2 px-2 py-2 "

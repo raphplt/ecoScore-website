@@ -19,13 +19,13 @@ const changeColor = () => {
     setBgColor("var(--primary-color-dark)");
   }
 };
-// useEffect(() => {
-//   const fetchData = async () => {
-//     const result = await fetchProducts();
-//     setData(result);
-//   };
-//   fetchData();
-// }, []);
+useEffect(() => {
+  const fetchData = async () => {
+    const result = await fetchProducts();
+    setData(result);
+  };
+  fetchData();
+}, []);
 return (
   <div style={{ background: bgColor }}>
     <MetaData />
@@ -93,9 +93,9 @@ return (
       <p>Dark mode</p>
     </button>
 
-    {/* {data.map((product: any) => (
+    {data.map((product: any) => (
         <ProductCard title={product.title} key={product.id} />
-      ))} */}
+      ))}
 
     <Footer />
   </div>

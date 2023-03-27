@@ -8,7 +8,6 @@ import { useRouter } from "next/dist/client/router";
 export default function SearchBar() {
   // const { setResults } = useContext(ProductContext);
   const router = useRouter();
-
   const [query, setQuery] = useState("");
 
   const handleSubmit = async (e: any) => {
@@ -19,7 +18,9 @@ export default function SearchBar() {
     // Met à jour les résultats de la recherche dans le contexte
     // setResults(response.data);
     localStorage.setItem("searchResults", JSON.stringify(response.data));
-    router.push("/product");
+    if (router.pathname === "/") {
+      router.push("/resultats");
+    } else router.reload();
   };
 
   return (
@@ -32,7 +33,7 @@ export default function SearchBar() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Iphone 14, Nike Air Max... "
+          placeholder="Rechercher... "
           className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
           required
         />

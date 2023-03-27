@@ -5,7 +5,7 @@ import TopButton from "./topbutton";
 
 export default function Footer() {
     return (
-      <div>
+      <div className="bottom-0 w-full">
         <TopButton
           src={require("../../public/assets/topbutton.png")}
           alt="scrolltopbutton"

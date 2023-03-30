@@ -6,9 +6,7 @@ export default function Forum() {
     <div>
       <Header />
       <p>C&#39;est la page du forum</p>
-      <br />
-      <br />
-      <br />
+
       <Footer />
     </div>
   );

@@ -2,7 +2,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import MetaData from "@/components/metadatas";
 import ProductCard from "@/components/productCard";
-
+import Image from "next/image";
 import SearchBar from "@/components/SearchBar";
 import ShortCutButton from "@/components/shortcutButton";
 import { fetchProducts } from "@/services/products/products.services";
@@ -70,23 +70,58 @@ export default function Index() {
           alt="icon"
         />
       </div>
-      <div className="grid grid-cols-2 grid-rows-3 w-full">
-        <div className=" h-96">
-          <h3 className="text-center text-2xl">Lorem Ipsum</h3>
+      <div className="grid grid-cols-2 grid-rows-3 w-full gap-y-36 mb-24">
+        <div className="mx-auto w-2/3">
+          <h2 className="text-center text-xl">Lorem Ipsum</h2>
+          <div className=" text-center mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </div>
         </div>
-        <div className=" h-96">
-          <div className="rounded-[50%] w-48 h-48 bg-green-200 mx-auto"></div>
+        <Image
+          src={require("../../public/assets/index/indexImage1.png")}
+          alt="Photo d'illustration"
+          className="mx-auto"
+        />
+        <Image
+          src={require("../../public/assets/index/indexImage2.png")}
+          alt="Photo d'illustration"
+          className="mx-auto"
+        />
+        <div className="mx-auto w-2/3">
+          <h2 className="text-center text-xl">Lorem Ipsum</h2>
+          <div className=" text-center mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </div>
         </div>
-        <div className=" h-96">
-          <div className="rounded-[50%] w-48 h-48 bg-green-200 mx-auto"></div>
+        <div className="mx-auto w-2/3">
+          <h2 className="text-center text-xl">Lorem Ipsum</h2>
+          <div className=" text-center mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </div>
         </div>
-        <div className="h-96">
-          <h3 className="text-center text-2xl">Lorem Ipsum</h3>
-        </div>
-        <div className=" h-96">
-          <h3 className="text-center text-2xl">Lorem Ipsum</h3>
-        </div>
-        <div className="h-96"></div>
+        <Image
+          src={require("../../public/assets/index/indexImage1.png")}
+          alt="Photo d'illustration"
+          className="mx-auto"
+        />
       </div>
       <button
         onClick={() => changeColor()}

@@ -6,9 +6,6 @@ export default function Quizz() {
     <div>
       <Header />
       <p>C&#39;est la page pour le quizz</p>
-      <br />
-      <br />
-      <br />
       <Footer />
     </div>
   );

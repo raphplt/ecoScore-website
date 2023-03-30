@@ -6,9 +6,7 @@ export default function Discover() {
     <div>
       <Header />
       <p>C&#39;est la page de découverte</p>
-      <br />
-      <br />
-      <br />
+x
       <Footer />
     </div>
   );

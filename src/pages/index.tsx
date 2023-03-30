@@ -70,7 +70,7 @@ export default function Index() {
           alt="icon"
         />
       </div>
-      <div className="grid grid-cols-2 grid-rows-3 w-full gap-y-36 mb-24">
+      <div className="grid grid-cols-2 grid-rows-3 w-full gap-y-48 mb-24">
         <div className="mx-auto w-2/3">
           <h2 className="text-center text-xl">Lorem Ipsum</h2>
           <div className=" text-center mt-5">

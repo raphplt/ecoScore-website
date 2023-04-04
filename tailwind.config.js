@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Lato", "sans-serif"],
+        libre: ["Libre Baskerville", "serif"],
       },
       colors: {
         "primary-color": "var(--primary-color)",

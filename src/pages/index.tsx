@@ -31,7 +31,7 @@ export default function Index() {
     <div style={{ background: bgColor }}>
       <MetaData />
       <Header />
-      <h1 className="text-[64px] text-secondary-color mt-20 font-bold text-center mb-12 ">
+      <h1 className="text-[84px] text-secondary-color mt-20 font-bold text-center mb-12 font-libre ">
         Eco score
       </h1>
       <SearchBar />

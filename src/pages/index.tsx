@@ -3,7 +3,7 @@ import Header from "@/components/header";
 import MetaData from "@/components/metadatas";
 import ProductCard from "@/components/productCard";
 import Image from "next/image";
-import SearchBar from "@/components/SearchBar";
+import SearchBar from "@/components/searchBar";
 import ShortCutButton from "@/components/shortcutButton";
 import { fetchProducts } from "@/services/products/products.services";
 

@@ -12,6 +12,13 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Lato", "sans-serif"],
+        libre: ["Libre Baskerville", "serif"],
+      },
+      colors: {
+        "primary-color": "var(--primary-color)",
+        "primary-color-dark": "var(--primary-color-dark)",
+        "secondary-color": "var(--secondary-color)",
+        "secondary-color-dark": "var(--secondary-color-dark)",
       },
     },
   },

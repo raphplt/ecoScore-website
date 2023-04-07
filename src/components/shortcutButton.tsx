@@ -17,7 +17,7 @@ export default function ShortCutButton(props: any) {
     } else router.reload();
   };
   return (
-    <div className="w-20 h-20 rounded-[30%] bg-[#D9D9D9] hover:bg-[#BAB5B5] flex items-center justify-center mx-5 hover:cursor-pointer">
+    <div className="w-20 h-20 rounded-[30%] backdrop-blur-sm bg-white/30 hover:bg-white/10 flex items-center justify-center mx-5 hover:cursor-pointer">
       <button onClick={handleSubmit}>
         <div className="flex items-center justify-center">
           <Image src={props.src} width={40} height={40} alt={props.alt} />

@@ -1,16 +1,21 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import MetaData from "@/components/metadatas";
-import ProductCard from "@/components/productCard";
 import Image from "next/image";
-import SearchBar from "@/components/SearchBar";
+import SearchBar from "@/components/searchBar";
 import ShortCutButton from "@/components/shortcutButton";
-import { fetchProducts } from "@/services/products/products.services";
-
 import { useEffect, useState } from "react";
+import { fetchCategories } from "@/services/categories/categories.services";
+
+interface Category {
+  _id: string;
+  cat: string;
+  subCat: Array<string>;
+  image: string;
+}
 
 export default function Index() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Category[]>([]);
   const [bgColor, setBgColor] = useState(`var(--primary-color)`);
 
   const changeColor = () => {
@@ -22,7 +27,7 @@ export default function Index() {
   };
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetchProducts();
+      const result = await fetchCategories();
       setData(result);
     };
     fetchData();
@@ -37,38 +42,15 @@ export default function Index() {
       <SearchBar />
 
       <div className="w-[30%] mx-auto flex gap-5 justify-center flex-wrap mt-10 mb-[300px]">
-        <ShortCutButton
-          src={require("../../public/assets/icons/icon-clothes.png")}
-          alt="icon"
-        />
-        <ShortCutButton
-          src={require("../../public/assets/icons/icon-food.png")}
-          alt="icon"
-        />
-        <ShortCutButton
-          src={require("../../public/assets/icons/icon-IT.png")}
-          alt="icon"
-        />
-        <ShortCutButton
-          src={require("../../public/assets/icons/icon-makeup.png")}
-          alt="icon"
-        />
-        <ShortCutButton
-          src={require("../../public/assets/icons/icon-clothes.png")}
-          alt="icon"
-        />
-        <ShortCutButton
-          src={require("../../public/assets/icons/icon-food.png")}
-          alt="icon"
-        />
-        <ShortCutButton
-          src={require("../../public/assets/icons/icon-IT.png")}
-          alt="icon"
-        />
-        <ShortCutButton
-          src={require("../../public/assets/icons/icon-makeup.png")}
-          alt="icon"
-        />
+        {data &&
+          data.map((result) => (
+            <ShortCutButton
+              key={result._id}
+              src={result.image}
+              title={result.cat}
+              alt="icon"
+            />
+          ))}
       </div>
       <div className="grid grid-cols-2 grid-rows-3 w-full gap-y-48 mb-24">
         <div className="mx-auto w-2/3">

@@ -2,7 +2,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Metadatas from "@/components/metadatas";
 import ProductCard from "@/components/productCard";
-import SearchBar from "@/components/SearchBar";
+import SearchBar from "@/components/searchBar";
 import { useContext, useEffect, useState } from "react";
 
 interface Product {
@@ -16,7 +16,7 @@ interface Product {
 
 export default function Product() {
   const [resultats, setResultats] = useState<Product[]>([]);
-  const [lengthResultats, setLengthResultats] = useState(3);
+  const [lengthResultats, setLengthResultats] = useState(6);
 
   useEffect(() => {
     const storedResults = localStorage.getItem("searchResults");

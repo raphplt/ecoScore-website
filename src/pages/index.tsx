@@ -63,12 +63,12 @@ export default function Index() {
     >
       <MetaData />
       <Header />
-      <h1 className="text-[84px] text-secondary-color mt-20 font-bold text-center mb-12 font-libre">
+      <h1 className="lg:text-[84px] sm:text-[54px] text-secondary-color mt-20 font-bold text-center mb-12 font-libre">
         Eco score
       </h1>
       <SearchBar />
 
-      <div className="w-[30%] mx-auto flex gap-5 justify-center flex-wrap mt-10 mb-[150px]">
+      <div className="lg:w-[30%] sm:w-[70%] mx-auto flex gap-5 justify-center flex-wrap mt-10 mb-[150px]">
         {data &&
           data.map((result) => (
             <ShortCutButton
@@ -80,10 +80,10 @@ export default function Index() {
           ))}
       </div>
       <div className="">
-        <h2 className="mb-12 backdrop-blur-sm bg-white/30 py-5 px-8 rounded-xl text-2xl w-fit mx-auto">
+        <h2 className="mb-16 backdrop-blur-sm bg-white/30 py-5 px-16 rounded-xl text-2xl w-fit mx-auto">
           En utilisant EcoScore, vous participez à un monde plus vert:
         </h2>
-        <div className="flex justify-center gap-64 mt-24">
+        <div className="flex justify-center gap-32 mt-24">
           <div className="backdrop-blur-sm bg-white/30 py-5 px-8 rounded-3xl text-4xl">
             7418 Co²
           </div>

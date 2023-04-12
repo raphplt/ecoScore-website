@@ -10,7 +10,7 @@ export default function Header() {
           alt="logo    "
         />
       </Link>
-      <div className="flex flex-row gap-24">
+      <div className="flex flex-row lg:gap-24 sm:gap-12">
         <div>
           <Link href={"./"}>Accueil</Link>
         </div>

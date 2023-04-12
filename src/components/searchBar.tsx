@@ -27,7 +27,7 @@ export default function SearchBar() {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="flex items-center border-b-2 border-secondary-color hover:border-green-600 py-2 w-[30%] h-10 mx-auto"
+        className="flex items-center border-b-2 border-secondary-color hover:border-green-600 py-2 lg:w-[30%] sm:w-[50%] h-10 mx-auto"
       >
         <input
           type="text"

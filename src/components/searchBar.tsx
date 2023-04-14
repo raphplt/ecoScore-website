@@ -27,21 +27,21 @@ export default function SearchBar() {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="flex items-center border-b-2 border-secondary-color hover:border-green-600 py-2 lg:w-[30%] sm:w-[50%] h-10 mx-auto"
+        className="flex items-center border-b-2 border-[#CCDDCD] hover:border-[#95D5B2] py-2 w-[70%] sm:w-[70%] h-10 mx-auto"
       >
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Rechercher... "
-          className="appearance-none bg-transparent border-none w-full  mr-3 py-1 px-2 leading-tight focus:outline-none"
+          className="appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none placeholder-[#CCDDCD]"
           required
         />
         <button
-          className="flex-shrink-0 bg-secondary-color hover:bg-green-700 border-secondary-color hover:border-green-700 text-sm border-4 text-white py-1 px-2 rounded-xl"
+          className="flex-shrink-0 bg-[#E2F1E3] hover:bg-[#95D5B2] text-sm text-white py-2 px-2 rounded-xl"
           type="submit"
         >
-          <MagnifyingGlassIcon className="h-4 w-4" />
+          <MagnifyingGlassIcon className="h-4 w-4 text-[#2D6A4F]" />
         </button>
       </form>
     </div>

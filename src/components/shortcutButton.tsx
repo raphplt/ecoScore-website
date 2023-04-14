@@ -17,12 +17,15 @@ export default function ShortCutButton(props: any) {
     } else router.reload();
   };
   return (
-    <div className="w-20 h-20 rounded-[30%] backdrop-blur-sm bg-white/30 hover:bg-white/10 flex items-center justify-center mx-5 hover:cursor-pointer">
-      <button onClick={handleSubmit}>
-        <div className="flex items-center justify-center">
-          <Image src={props.src} width={40} height={40} alt={props.alt} />
-        </div>
-      </button>
+    <div>
+      <div className="w-16 h-16 rounded-[30%] bg-[#E2F1E3] drop-shadow-md flex items-center justify-center mx-5 hover:cursor-pointer">
+        <button onClick={handleSubmit}>
+          <div className="flex items-center justify-center">
+            <Image src={props.src} width={35} height={35} alt={props.alt} />
+          </div>
+        </button>
+      </div>
+      <div className="text-center mt-3 text-sm text-white">{props.title}</div>
     </div>
   );
 }

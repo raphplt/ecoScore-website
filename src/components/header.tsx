@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="flex flex-row items-center justify-between w-[90%] mx-auto pt-2">
+    <div className="sm:flex-row sm:items-center sm:justify-between sm:w-[90%] sm:mx-auto sm:pt-2 sm:flex hidden">
       <Link href={"./"}>
         <Image
           src={require("../../public/assets/ecoscoreLogo.png")}
           alt="logo    "
         />
       </Link>
-      <div className="flex flex-row lg:gap-24 sm:gap-12">
+      <div className="flex flex-row lg:gap-24 sm:gap-12 text-[#1B4332] font-semibold">
         <div>
           <Link href={"./"}>Accueil</Link>
         </div>

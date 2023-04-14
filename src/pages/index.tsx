@@ -6,6 +6,7 @@ import SearchBar from "@/components/searchBar";
 import ShortCutButton from "@/components/shortcutButton";
 import { useEffect, useState } from "react";
 import { fetchCategories } from "@/services/categories/categories.services";
+import HeaderMobile from "@/components/headerMobile";
 
 interface Category {
   _id: string;
@@ -53,45 +54,50 @@ export default function Index() {
 
   return (
     <div
-      style={{
-        backgroundImage: `url(${bgImg})`,
-        backgroundSize: "100%",
-        backgroundRepeat: "no-repeat",
-        position: "absolute",
-        top: "0%",
-      }}
+    // style={{
+    //   backgroundImage: `url(${bgImg})`,
+    //   backgroundSize: "100%",
+    //   backgroundRepeat: "no-repeat",
+    //   position: "absolute",
+    //   top: "0%",
+    // }}
     >
       <MetaData />
-      <Header />
-      <h1 className="lg:text-[84px] sm:text-[54px] text-secondary-color mt-20 font-bold text-center mb-12 font-libre">
-        Eco score
-      </h1>
-      <SearchBar />
+      <div className="bg-[#CCDDCD]">
+        <Header />
+        <HeaderMobile />
+        <div className="bg-[#2D6A4F] w-10/12 lg:w-1/2 mx-auto rounded-lg">
+          <h1 className="lg:text-[70px] text-[54px] text-[#E2F1E3] mt-8 lg:mt-24 font-bold text-center mb-16 font-libre pt-5">
+            Eco score
+          </h1>
+          <SearchBar />
 
-      <div className="lg:w-[30%] sm:w-[70%] mx-auto flex gap-5 justify-center flex-wrap mt-10 mb-[150px]">
-        {data &&
-          data.map((result) => (
-            <ShortCutButton
-              key={result._id}
-              src={result.image}
-              title={result.cat}
-              alt="icon"
-            />
-          ))}
-      </div>
-      <div className="">
-        <h2 className="mb-16 backdrop-blur-sm bg-white/30 py-5 px-16 rounded-xl text-2xl w-fit mx-auto">
-          En utilisant EcoScore, vous participez à un monde plus vert:
-        </h2>
-        <div className="flex justify-center gap-32 mt-24">
-          <div className="backdrop-blur-sm bg-white/30 py-5 px-8 rounded-3xl text-4xl">
-            7418 Co²
+          <div className="lg:w-[80%] w-[100%] mx-auto flex gap-10 justify-center flex-wrap mt-16 pb-[150px]">
+            {data &&
+              data.map((result) => (
+                <ShortCutButton
+                  key={result._id}
+                  src={result.image}
+                  title={result.cat}
+                  alt="icon"
+                />
+              ))}
           </div>
-          <div className="backdrop-blur-sm bg-white/30 py-5 px-8 rounded-3xl text-4xl">
-            34k
-          </div>
-          <div className="backdrop-blur-sm bg-white/30 py-5 px-8 rounded-3xl text-4xl">
-            60 000
+        </div>
+        <div className="pb-16">
+          <h2 className="mb-16 mt-10 py-5 px-16 rounded-xl text-xl w-fit mx-auto text-[#1B4332] font-semibold">
+            En utilisant EcoScore, vous participez à un monde plus vert:
+          </h2>
+          <div className="flex justify-evenly mt-20">
+            <div className=" rounded-[50%] bg-[#52B788] w-28 h-28 text-4xl flex items-center justify-center">
+              123
+            </div>
+            <div className="rounded-[50%] bg-[#52B788] w-28 h-28 text-4xl flex items-center justify-center">
+              541
+            </div>
+            <div className="rounded-[50%] bg-[#52B788] w-28 h-28 text-4xl flex items-center justify-center">
+              298
+            </div>
           </div>
         </div>
       </div>

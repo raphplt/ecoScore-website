@@ -5,7 +5,7 @@ import ProductCard from "@/components/productCard";
 import SearchBar from "@/components/searchBar";
 import { useContext, useEffect, useState } from "react";
 
-interface Product {
+export interface Product {
   _id: string;
   title: string;
   type: string;

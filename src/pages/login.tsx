@@ -46,7 +46,14 @@ export default function Forum() {
             </form>
           </div>
         </div>
-        <div className="bg-green-200 py-20 rounded-r-xl"></div>
+        <div
+          className="bg-green-200 py-20 rounded-r-xl"
+          style={{
+            backgroundImage: `url(${"/assets/bg/bg-7.jpg"})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        ></div>
       </div>
 
       <Footer />

@@ -53,26 +53,25 @@ export default function Index() {
   }, []);
 
   return (
-    <div
-    // style={{
-    //   backgroundImage: `url(${bgImg})`,
-    //   backgroundSize: "100%",
-    //   backgroundRepeat: "no-repeat",
-    //   position: "absolute",
-    //   top: "0%",
-    // }}
-    >
+    <div className="bg-[#E7F1E6]">
       <MetaData />
-      <div className="bg-[#CCDDCD]">
+      <div
+        style={{
+          backgroundImage: `url(${"/assets/svg/waveIndex.svg"})`,
+          backgroundSize: "100%",
+          backgroundRepeat: "no-repeat",
+          // position: "absolute",
+        }}
+      >
         <Header />
         <HeaderMobile />
-        <div className="bg-[#2D6A4F] w-10/12 lg:w-1/2 mx-auto rounded-lg">
-          <h1 className="lg:text-[70px] text-[54px] text-[#E2F1E3] mt-8 lg:mt-24 font-bold text-center mb-16 font-libre pt-5">
+        <div className="bg-white w-10/12 lg:w-2/5 mx-auto rounded-xl shadow-md">
+          <h1 className="lg:text-[70px] text-[54px] text-secondary-color mt-8 lg:mt-24 font-bold text-center mb-16 font-libre pt-5">
             Eco score
           </h1>
           <SearchBar />
 
-          <div className="lg:w-[80%] w-[100%] mx-auto flex gap-10 justify-center flex-wrap mt-16 pb-[150px]">
+          <div className="lg:w-[80%] w-[100%] mx-auto flex gap-10 justify-center flex-wrap mt-16 sm:pb-[150px] pb-12">
             {data &&
               data.map((result) => (
                 <ShortCutButton
@@ -85,23 +84,23 @@ export default function Index() {
           </div>
         </div>
         <div className="pb-16">
-          <h2 className="mb-16 mt-10 py-5 px-16 rounded-xl text-xl w-fit mx-auto text-[#1B4332] font-semibold">
+          <h2 className="mb-16 mt-28 py-5 px-16 rounded-xl text-xl w-fit mx-auto text-[#1B4332] font-semibold backdrop-blur-sm bg-white/30">
             En utilisant EcoScore, vous participez à un monde plus vert:
           </h2>
-          <div className="flex justify-evenly mt-20">
-            <div className=" rounded-[50%] bg-[#52B788] w-28 h-28 text-4xl flex items-center justify-center">
+          <div className="flex justify-evenly mt-28">
+            <div className=" rounded-[50%] bg-[#579452] text-white w-28 h-28 text-4xl flex items-center shadow-md justify-center">
               123
             </div>
-            <div className="rounded-[50%] bg-[#52B788] w-28 h-28 text-4xl flex items-center justify-center">
+            <div className="rounded-[50%] bg-[#579452] text-white  w-28 h-28 text-4xl flex items-center shadow-md justify-center">
               541
             </div>
-            <div className="rounded-[50%] bg-[#52B788] w-28 h-28 text-4xl flex items-center justify-center">
+            <div className="rounded-[50%] bg-[#579452] text-white  w-28 h-28 text-4xl flex items-center shadow-md justify-center">
               298
             </div>
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 grid-rows-3 w-full gap-y-48 mb-24 mt-96">
+      <div className="grid grid-cols-2 grid-rows-3 w-full gap-y-48 mb-24 mt-48">
         <div className="mx-auto w-2/3">
           <div className=" text-left mt-5 backdrop-blur-sm bg-white/30 py-5 px-8 rounded-xl">
             <h2 className="text-xl">Lorem Ipsum</h2>
@@ -154,16 +153,12 @@ export default function Index() {
           className="mx-auto border-4 rounded-[50%] border-secondary-color"
         />
       </div>
-      <button
+      {/* <button
         onClick={() => changeColor()}
         className=" bg-slate-500 border-2 px-2 py-2 "
       >
         <p>Dark mode</p>
-      </button>
-      {/* {data.map((product: any) => (
-        <ProductCard title={product.title} key={product.id} />
-      ))} */}
-
+      </button> */}
       <Footer />
     </div>
   );

@@ -18,32 +18,18 @@ export default function Discover() {
     fetchData();
   }, []);
   return (
-    <div>
+    <div className="bg-[#E7F1E6]">
       <Header />
       <MetaData />
+
       <div className="mt-5">
         <h1 className="text-center text-3xl">Découvertes</h1>
         <div>
-          <h2 className="ml-24 mt-12 text-xl">Catégories tendances</h2>
-          <div className="flex items-start w-10/12">
-            {data &&
-              data
-                .slice(0, lengthResultats)
-                .map((result) => (
-                  <ProductCardSquare
-                    key={result._id}
-                    title={result.title}
-                    type={result.type}
-                    scoreEnergy={result.scoreEnergy}
-                    scoreCarbon={result.scoreCarbon}
-                    scoreRepair={result.scoreRepair}
-                  />
-                ))}
-          </div>
-
-          <div>
-            <h3 className="ml-12 mt-6 h-48">Téléphonie</h3>
-            <div className="flex items-start w-10/12">
+          <div className="w-11/12 mx-auto">
+            <h2 className=" mt-12 text-2xl text-secondary-color font-semibold">
+              Produits tendances
+            </h2>
+            <div className="flex items-start  gap-12 mt-4">
               {data &&
                 data
                   .slice(0, lengthResultats)
@@ -59,9 +45,11 @@ export default function Discover() {
                   ))}
             </div>
           </div>
-          <div>
-            <h3 className="ml-12 mt-6 h-48">Téléphonie</h3>
-            <div className="flex items-start w-10/12">
+          <div className="w-11/12 mx-auto">
+            <h2 className=" mt-12 text-2xl text-secondary-color font-semibold">
+              Produits tendances
+            </h2>
+            <div className="flex items-start  gap-12 mt-4">
               {data &&
                 data
                   .slice(0, lengthResultats)
@@ -77,9 +65,31 @@ export default function Discover() {
                   ))}
             </div>
           </div>
-          <div>
-            <h3 className="ml-12 mt-6 h-48">Téléphonie</h3>
-            <div className="flex items-start w-10/12">
+          <div className="w-11/12 mx-auto">
+            <h2 className=" mt-12 text-2xl text-secondary-color font-semibold">
+              Produits tendances
+            </h2>
+            <div className="flex items-start  gap-12 mt-4">
+              {data &&
+                data
+                  .slice(0, lengthResultats)
+                  .map((result) => (
+                    <ProductCardSquare
+                      key={result._id}
+                      title={result.title}
+                      type={result.type}
+                      scoreEnergy={result.scoreEnergy}
+                      scoreCarbon={result.scoreCarbon}
+                      scoreRepair={result.scoreRepair}
+                    />
+                  ))}
+            </div>
+          </div>
+          <div className="w-11/12 mx-auto">
+            <h2 className=" mt-12 text-2xl text-secondary-color font-semibold">
+              Produits tendances
+            </h2>
+            <div className="flex items-start  gap-12 mt-4">
               {data &&
                 data
                   .slice(0, lengthResultats)

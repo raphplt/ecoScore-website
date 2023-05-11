@@ -53,7 +53,7 @@ export default function ProductCard(props: any) {
     <div
       key={props._id}
       // style={{ borderColor: accentColor }}
-      className="mt-10 py-6 w-4/5 mx-auto mb-10 rounded-xl flex justify-between bg-slate-100 drop-shadow-md flex-col lg:flex-row"
+      className="mt-10 py-6 w-4/5 mx-auto mb-10 rounded-xl flex justify-between bg-slate-100 shadow-md flex-col lg:flex-row"
     >
       <div className="flex flex-col ml-5">
         <div className="text-2xl mb-5">

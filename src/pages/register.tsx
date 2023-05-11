@@ -3,22 +3,31 @@ import Header from "@/components/header";
 import MetaData from "@/components/metadatas";
 import Link from "next/link";
 
-export default function Login() {
+export default function Register() {
   return (
     <div className="bg-[#E7F1E6]">
       <MetaData />
       <Header />
-      <div className="sm:mt-36  w-10/12 sm:w-1/2 mx-auto bg-white mb-[500px] sm:grid sm:grid-cols-2 rounded-xl">
+      <div className="sm:mt-36 sm:w-1/2 w-10/12 mx-auto bg-white mb-[500px] sm:grid sm:grid-cols-2 rounded-xl">
         <div className="py-20 bg-white rounded-l-xl">
-          <h1 className="text-center text-3xl mb-16">Se connecter</h1>
+          <h1 className="text-center text-3xl mb-16">S&#39;inscrire</h1>
           <div className="flex flex-col items-center gap-10 ">
             <form className="flex flex-col ">
               <input
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Adresse mail"
                 required
+                placeholder="Adresse mail"
+                className="sm:w-[300px] w-10/12 pl-1 py-1 border-secondary-color rounded-lg "
+              />
+              <div className="h-[2px] w-full bg-secondary-color mb-12"></div>
+              <input
+                type="text"
+                id="pseudo"
+                name="pseudo"
+                required
+                placeholder="Pseudonyme"
                 className="sm:w-[300px] w-10/12 pl-1 py-1 border-secondary-color rounded-lg "
               />
               <div className="h-[2px] w-full bg-secondary-color mb-12"></div>
@@ -27,8 +36,18 @@ export default function Login() {
                 type="password"
                 id="password"
                 name="password"
-                className="sm:w-[300px] w-10/12 pl-1 py-1 border-secondary-color rounded-lg"
                 placeholder="Mot de passe"
+                className="sm:w-[300px] w-10/12 pl-1 py-1 border-secondary-color rounded-lg "
+                required
+              />
+              <div className="h-[2px] w-full bg-secondary-color mb-12"></div>
+
+              <input
+                type="password"
+                id="Confirmpassword"
+                name="Confirmpassword"
+                placeholder="Confirmer le mot de passe"
+                className="sm:w-[300px] w-10/12 pl-1 py-1 border-secondary-color rounded-lg "
                 required
               />
               <div className="h-[2px] w-full bg-secondary-color mb-12"></div>
@@ -39,7 +58,7 @@ export default function Login() {
                 Connexion
               </button>
               <p className="text-sm text-center mt-4">
-                <Link href={"/register"}>
+                <Link href={"/login"}>
                   Vous n&#39;avez pas de compte ? Inscription
                 </Link>
               </p>
@@ -47,9 +66,9 @@ export default function Login() {
           </div>
         </div>
         <div
-          className="bg-green-200 py-20 rounded-r-xl  hidden sm:flex"
+          className="bg-green-200 py-20 rounded-r-xl hidden sm:flex"
           style={{
-            backgroundImage: `url(${"/assets/bg/bg-7.jpg"})`,
+            backgroundImage: `url(${"/assets/bg/bg-1.jpg"})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
           }}

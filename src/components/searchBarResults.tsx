@@ -5,7 +5,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 // import { ProductContext } from "@/context/ProductContext";
 import { useRouter } from "next/dist/client/router";
 
-export default function SearchBar() {
+export default function SearchBarResults() {
   // const { setResults } = useContext(ProductContext);
   const router = useRouter();
   const [query, setQuery] = useState("");
@@ -27,7 +27,7 @@ export default function SearchBar() {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="flex items-center border-b-2 border-secondary-color hover:border-[#579452] py-2 w-[80%] sm:w-[70%] h-10 mx-auto"
+        className="flex items-center border-b-2 border-secondary-color hover:border-[#579452] py-2 w-[80%] sm:w-[40%] h-10 mx-auto "
       >
         <input
           type="text"

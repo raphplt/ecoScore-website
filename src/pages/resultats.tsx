@@ -10,6 +10,8 @@ export interface Product {
   _id: string;
   title: string;
   type: string;
+  tags: Array<string>;
+  trendScore: number;
   scoreEnergy: number;
   scoreCarbon: number;
   scoreRepair: number;
@@ -28,7 +30,7 @@ export default function Resultats() {
   }, []);
 
   const updateLength = () => {
-    setLengthResultats(lengthResultats + 3);
+    setLengthResultats(lengthResultats + 10);
   };
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -49,7 +51,7 @@ export default function Resultats() {
       </div>
       <div className="mb-48">
         {resultats.length > 0 ? (
-          <>
+          <div>
             {!isPhone ? (
               resultats
                 .slice(0, lengthResultats)
@@ -77,7 +79,7 @@ export default function Resultats() {
                 ))}
               </div>
             )}
-          </>
+          </div>
         ) : (
           <div className="text-center mt-20">Aucun résultat</div>
         )}

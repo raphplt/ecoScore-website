@@ -1,9 +1,34 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import MetaData from "@/components/metadatas";
+import { login } from "@/services/users/users.services";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userInfos, setuserInfos] = useState({});
+  const router = useRouter();
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    try {
+      const response = await login({ email: email, password: password });
+      setuserInfos(response);
+      localStorage.removeItem("user");
+      localStorage.setItem("user", JSON.stringify(response));
+      if (response.role === "admin") {
+        router.push("/admin");
+      }
+      if (response.role === "user") {
+        router.push("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="bg-[#E7F1E6]">
       <MetaData />
@@ -12,12 +37,13 @@ export default function Login() {
         <div className="py-20 bg-white rounded-l-xl">
           <h1 className="text-center text-3xl mb-16">Se connecter</h1>
           <div className="flex flex-col items-center gap-10 ">
-            <form className="flex flex-col ">
+            <form className="flex flex-col" onSubmit={handleSubmit}>
               <input
                 type="email"
                 id="email"
                 name="email"
                 placeholder="Adresse mail"
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 className="sm:w-[300px] w-10/12 pl-1 py-1 border-secondary-color rounded-lg "
               />
@@ -27,6 +53,7 @@ export default function Login() {
                 type="password"
                 id="password"
                 name="password"
+                onChange={(e) => setPassword(e.target.value)}
                 className="sm:w-[300px] w-10/12 pl-1 py-1 border-secondary-color rounded-lg"
                 placeholder="Mot de passe"
                 required

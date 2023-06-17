@@ -45,7 +45,7 @@ export default function Login() {
                 placeholder="Adresse mail"
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="sm:w-[300px] w-10/12 pl-1 py-1 border-secondary-color rounded-lg "
+                className="sm:w-[300px] w-10/12 pl-1 py-1 border-secondary-color rounded-lg focus:outline-none"
               />
               <div className="h-[2px] w-full bg-secondary-color mb-12"></div>
 
@@ -54,7 +54,7 @@ export default function Login() {
                 id="password"
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
-                className="sm:w-[300px] w-10/12 pl-1 py-1 border-secondary-color rounded-lg"
+                className="sm:w-[300px] w-10/12 pl-1 py-1 border-secondary-color rounded-lg focus:outline-none"
                 placeholder="Mot de passe"
                 required
               />

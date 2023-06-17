@@ -41,6 +41,7 @@ export default function Discover() {
                       scoreEnergy={result.scoreEnergy}
                       scoreCarbon={result.scoreCarbon}
                       scoreRepair={result.scoreRepair}
+                      trendScore={result.trendScore}
                     />
                   ))}
             </div>
@@ -61,6 +62,7 @@ export default function Discover() {
                       scoreEnergy={result.scoreEnergy}
                       scoreCarbon={result.scoreCarbon}
                       scoreRepair={result.scoreRepair}
+                      trendScore={result.trendScore}
                     />
                   ))}
             </div>
@@ -81,6 +83,7 @@ export default function Discover() {
                       scoreEnergy={result.scoreEnergy}
                       scoreCarbon={result.scoreCarbon}
                       scoreRepair={result.scoreRepair}
+                      trendScore={result.trendScore}
                     />
                   ))}
             </div>
@@ -101,6 +104,7 @@ export default function Discover() {
                       scoreEnergy={result.scoreEnergy}
                       scoreCarbon={result.scoreCarbon}
                       scoreRepair={result.scoreRepair}
+                      trendScore={result.trendScore}
                     />
                   ))}
             </div>

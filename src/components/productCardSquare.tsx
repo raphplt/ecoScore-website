@@ -56,6 +56,7 @@ export default function ProductCardSquare(props: any) {
       className="py-6 w-fit  rounded-xl flex justify-between bg-slate-100 drop-shadow-md flex-col lg:flex-row gap-8"
     >
       <div className="flex flex-col ml-5">
+        {/* <div>{props.trendScore}🔥</div> */}
         <div className="text-2xl mb-5">
           {props.title}
           <div style={{ color: accentColor }} className="font-semibold text-xl">
@@ -67,7 +68,8 @@ export default function ProductCardSquare(props: any) {
         </div>
       </div>
       <div className="flex flex-col mr-5 justify-center gap-5">
-        <div className="flex gap-2">
+        <button className="text-right ">{props.trendScore}🔥</button>
+        <div className="flex gap-5">
           <div className="flex flex-col items-center gap-2">
             <Image
               src={require("../../public/assets/icons/icon-energy.png")}
@@ -119,8 +121,8 @@ export default function ProductCardSquare(props: any) {
           <div className="bg-secondary-color px-4 py-2 rounded-xl text-white text-center">
             Voir les détails
           </div>
-          <div className="border-secondary-color border-2 px-4 py-2 rounded-xl text-secondary-color">
-            Ajouter au comparateur
+          <div className="border-secondary-color border-2 px-2 py-1 rounded-xl text-center text-secondary-color">
+            Comparer
           </div>
         </div>
       </div>

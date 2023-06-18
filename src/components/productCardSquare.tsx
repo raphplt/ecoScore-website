@@ -70,16 +70,16 @@ export default function ProductCardSquare(props: any) {
       <div className="flex flex-col ml-5">
         <div className="b-5">
           <div className="text-xl">{props.title}</div>
-          <div className="flex gap-5 py-2">
+          <div className="flex gap-5 py-4">
             <button
-              className=" w-fit py-1 px-1 bg-slate-300 rounded-xl mr-0 text-sm"
+              className=" w-fit py-1 px-2 bg-slate-300 rounded-xl mr-0 text-sm"
               onClick={handleTrend}
             >
               {score}🔥
             </button>
             <div
               style={{ background: accentColor }}
-              className="text-center text-sm  py-1 px-2 w-fit rounded-xlA text-white"
+              className="text-center text-sm  py-1 px-2 w-fit rounded-xl text-white"
             >
               {scoreGlobal}
             </div>

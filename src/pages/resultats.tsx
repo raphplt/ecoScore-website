@@ -7,6 +7,7 @@ import SearchBarResults from "@/components/searchBarResults";
 import { useContext, useEffect, useState } from "react";
 
 export interface Product {
+  id: any;
   _id: string;
   title: string;
   type: string;

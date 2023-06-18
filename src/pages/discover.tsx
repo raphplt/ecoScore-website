@@ -9,6 +9,14 @@ import { fetchProducts } from "@/services/products/products.services";
 export default function Discover() {
   const [lengthResultats, setLengthResultats] = useState(4);
   const [data, setData] = useState<Product[]>([]);
+  const [usrID, setUsrID] = useState(0);
+
+  useEffect(() => {
+    const user: any = localStorage.getItem("user");
+    if (user) {
+      setUsrID(JSON.parse(user).id);
+    }
+  }, [usrID]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,6 +25,7 @@ export default function Discover() {
     };
     fetchData();
   }, []);
+
   return (
     <div className="bg-[#E7F1E6]">
       <Header />
@@ -42,6 +51,8 @@ export default function Discover() {
                       scoreCarbon={result.scoreCarbon}
                       scoreRepair={result.scoreRepair}
                       trendScore={result.trendScore}
+                      id={result._id}
+                      idUser={usrID}
                     />
                   ))}
             </div>
@@ -63,6 +74,8 @@ export default function Discover() {
                       scoreCarbon={result.scoreCarbon}
                       scoreRepair={result.scoreRepair}
                       trendScore={result.trendScore}
+                      id={result._id}
+                      idUser={usrID}
                     />
                   ))}
             </div>
@@ -84,6 +97,8 @@ export default function Discover() {
                       scoreCarbon={result.scoreCarbon}
                       scoreRepair={result.scoreRepair}
                       trendScore={result.trendScore}
+                      id={result._id}
+                      idUser={usrID}
                     />
                   ))}
             </div>
@@ -105,6 +120,8 @@ export default function Discover() {
                       scoreCarbon={result.scoreCarbon}
                       scoreRepair={result.scoreRepair}
                       trendScore={result.trendScore}
+                      id={result._id}
+                      idUser={usrID}
                     />
                   ))}
             </div>

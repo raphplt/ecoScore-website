@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { addTrendProduct } from "@/services/users/users.services";
+import { useRouter } from "next/router";
 
 export default function ProductCardSquare(props: any) {
   const [scoreGlobal, setScoreGlobal] = useState("");
@@ -8,13 +10,16 @@ export default function ProductCardSquare(props: any) {
   const [colorCarbon, setColorCarbon] = useState("");
   const [colorRepair, setColorRepair] = useState("");
   const [lengthResult, setLengthResult] = useState("");
+  const idUser = props.idUser;
+  const idProduct = props.id;
+  const [score, setScore] = useState(props.trendScore);
 
   useEffect(() => {
     if ((props.scoreEnergy + props.scoreCarbon + props.scoreRepair) / 3 <= 5) {
-      setScoreGlobal("Mauvais résultat");
+      setScoreGlobal("Mauvais score");
       setAccentColor("#E15C5C");
     } else {
-      setScoreGlobal("Bon résultat");
+      setScoreGlobal("Bon score");
       setAccentColor(`var(--secondary-color)`);
     }
   }, [props.scoreEnergy, props.scoreCarbon, props.scoreRepair]);
@@ -49,6 +54,13 @@ export default function ProductCardSquare(props: any) {
     }
   }, [props.scoreRepair]);
 
+  const handleTrend = async () => {
+    const res = await addTrendProduct({ idUser, idProduct });
+    if (res) {
+      setScore(score + 1);
+    }
+  };
+
   return (
     <div
       key={props._id}
@@ -56,11 +68,21 @@ export default function ProductCardSquare(props: any) {
       className="py-6 w-fit  rounded-xl flex justify-between bg-slate-100 drop-shadow-md flex-col lg:flex-row gap-8"
     >
       <div className="flex flex-col ml-5">
-        {/* <div>{props.trendScore}🔥</div> */}
-        <div className="text-2xl mb-5">
-          {props.title}
-          <div style={{ color: accentColor }} className="font-semibold text-xl">
-            {scoreGlobal}
+        <div className="b-5">
+          <div className="text-xl">{props.title}</div>
+          <div className="flex gap-5 py-2">
+            <button
+              className=" w-fit py-1 px-1 bg-slate-300 rounded-xl mr-0 text-sm"
+              onClick={handleTrend}
+            >
+              {score}🔥
+            </button>
+            <div
+              style={{ background: accentColor }}
+              className="text-center text-sm  py-1 px-2 w-fit rounded-xlA text-white"
+            >
+              {scoreGlobal}
+            </div>
           </div>
         </div>
         <div className="flex gap-8 items-center ">
@@ -68,7 +90,6 @@ export default function ProductCardSquare(props: any) {
         </div>
       </div>
       <div className="flex flex-col mr-5 justify-center gap-5">
-        <button className="text-right ">{props.trendScore}🔥</button>
         <div className="flex gap-5">
           <div className="flex flex-col items-center gap-2">
             <Image

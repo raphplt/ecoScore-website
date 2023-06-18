@@ -117,10 +117,10 @@ export default function Register() {
                 className={`${
                   requestOK
                     ? " bg-secondary-color"
-                    : "bg-slate-500 cursor-default"
+                    : "bg-slate-400 cursor-default"
                 }  text-white px-5 py-2 rounded-lg mt-12 mb-4`}
               >
-                Connexion
+                Créer un compte
               </button>
               <p className="text-sm text-center mt-4">
                 <Link href={"/login"}>

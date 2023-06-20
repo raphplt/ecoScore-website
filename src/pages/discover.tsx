@@ -7,7 +7,7 @@ import ProductCardSquare from "@/components/productCardSquare";
 import { fetchProducts } from "@/services/products/products.services";
 
 export default function Discover() {
-  const [lengthResultats, setLengthResultats] = useState(4);
+  const [lengthResultats, setLengthResultats] = useState(10);
   const [data, setData] = useState<Product[]>([]);
   const [usrID, setUsrID] = useState(0);
 
@@ -38,7 +38,7 @@ export default function Discover() {
             <h2 className=" mt-12 text-2xl text-secondary-color font-semibold">
               Produits tendances
             </h2>
-            <div className="flex items-start  gap-12 mt-4">
+            <div className="flex items-start gap-12 mt-4 overflow-scroll overflow-y-hidden pb-4">
               {data &&
                 data
                   .slice(0, lengthResultats)
@@ -61,7 +61,7 @@ export default function Discover() {
             <h2 className=" mt-12 text-2xl text-secondary-color font-semibold">
               Produits tendances
             </h2>
-            <div className="flex items-start  gap-12 mt-4">
+            <div className="flex items-start gap-12 mt-4 overflow-scroll overflow-y-hidden pb-4">
               {data &&
                 data
                   .slice(0, lengthResultats)
@@ -84,7 +84,7 @@ export default function Discover() {
             <h2 className=" mt-12 text-2xl text-secondary-color font-semibold">
               Produits tendances
             </h2>
-            <div className="flex items-start  gap-12 mt-4">
+            <div className="flex items-start  gap-12 mt-4 overflow-y-hidden overflow-clip pb-4">
               {data &&
                 data
                   .slice(0, lengthResultats)
@@ -107,7 +107,7 @@ export default function Discover() {
             <h2 className=" mt-12 text-2xl text-secondary-color font-semibold">
               Produits tendances
             </h2>
-            <div className="flex items-start  gap-12 mt-4">
+            <div className="flex items-start overflow-scroll gap-12 mt-4 overflow-y-hidden pb-4">
               {data &&
                 data
                   .slice(0, lengthResultats)

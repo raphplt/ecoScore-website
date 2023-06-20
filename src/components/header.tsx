@@ -7,6 +7,7 @@ import SearchBarHeader from "./searchBarHeader";
 export default function Header() {
   const [isShowing, setIsShowing] = useState(false);
   const [opacity, setOpacity] = useState(0);
+  const [visible, setVisible] = useState(false);
 
   const { asPath } = useRouter();
 
@@ -48,13 +49,27 @@ export default function Header() {
         <div style={{ opacity: opacity }}>
           <SearchBarHeader />
         </div>
-
-        <Link href={"./login"}>
+        <button onClick={() => setVisible(!visible)}>
           <Image
             src={require("../../public/assets/profilIcon.png")}
             alt="logo"
           />
-        </Link>
+        </button>
+        {visible && (
+          <div className="bg-white flex flex-col gap-2 rounded-lg absolute right-8 top-16 px-20 py-6 drop-shadow-md z-10">
+            <Link href={"./login"}>
+              <div className="text-center bg-slate-200 rounded-xl py-2 px-10 drop-shadow-sm">
+                Se connecter
+              </div>
+            </Link>
+            <div className="text-center">ou</div>
+            <Link href={"./register"}>
+              <div className="text-center bg-slate-200 rounded-xl py-2 px-10 drop-shadow-sm">
+                S&apos;inscrire
+              </div>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

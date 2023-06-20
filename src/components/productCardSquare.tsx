@@ -13,13 +13,14 @@ export default function ProductCardSquare(props: any) {
   const idUser = props.idUser;
   const idProduct = props.id;
   const [score, setScore] = useState(props.trendScore);
+  const router = useRouter();
 
   useEffect(() => {
     if ((props.scoreEnergy + props.scoreCarbon + props.scoreRepair) / 3 <= 5) {
-      setScoreGlobal("Mauvais score");
+      setScoreGlobal("Mauvais");
       setAccentColor("#E15C5C");
     } else {
-      setScoreGlobal("Bon score");
+      setScoreGlobal("Bon");
       setAccentColor(`var(--secondary-color)`);
     }
   }, [props.scoreEnergy, props.scoreCarbon, props.scoreRepair]);
@@ -61,6 +62,10 @@ export default function ProductCardSquare(props: any) {
     }
   };
 
+  const handleDetails = () => {
+    router.push(`/product/${props.id}`);
+  };
+
   return (
     <div
       key={props._id}
@@ -69,8 +74,10 @@ export default function ProductCardSquare(props: any) {
     >
       <div className="flex flex-col ml-5">
         <div className="b-5">
-          <div className="text-xl">{props.title}</div>
-          <div className="flex gap-5 py-4">
+          <div className="text-xl truncate overflow-hidden w-36">
+            {props.title}
+          </div>
+          <div className="flex gap-4 py-4">
             <button
               className=" w-fit py-1 px-2 bg-slate-300 rounded-xl mr-0 text-sm"
               onClick={handleTrend}
@@ -79,7 +86,7 @@ export default function ProductCardSquare(props: any) {
             </button>
             <div
               style={{ background: accentColor }}
-              className="text-center text-sm  py-1 px-2 w-fit rounded-xl text-white"
+              className="text-center text-sm  py-1 px-3 w-fit rounded-xl text-white"
             >
               {scoreGlobal}
             </div>
@@ -139,9 +146,12 @@ export default function ProductCardSquare(props: any) {
         </div>
 
         <div className="flex flex-col gap-5 justify-evenly mt-2">
-          <div className="bg-secondary-color px-4 py-2 rounded-xl text-white text-center">
+          <button
+            className="bg-secondary-color hover:bg-[#2e7727] px-4 py-2 rounded-xl text-white text-center"
+            onClick={handleDetails}
+          >
             Voir les détails
-          </div>
+          </button>
           <div className="border-secondary-color border-2 px-2 py-1 rounded-xl text-center text-secondary-color">
             Comparer
           </div>

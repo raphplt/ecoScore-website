@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import HeaderMobile from "@/components/headerMobile";
 import Metadatas from "@/components/metadatas";
 import ProductCard from "@/components/productCard";
 import ProductCardSquare from "@/components/productCardSquare";
@@ -44,6 +45,7 @@ export default function Resultats() {
     <div className="h-full">
       <Metadatas />
       <Header />
+      <HeaderMobile />
       <div className="mt-12">
         <SearchBarResults />
       </div>

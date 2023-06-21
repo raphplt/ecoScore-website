@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Product } from "./resultats";
 import ProductCardSquare from "@/components/productCardSquare";
 import { fetchProducts } from "@/services/products/products.services";
+import HeaderMobile from "@/components/headerMobile";
 
 export default function Discover() {
   const [lengthResultats, setLengthResultats] = useState(10);
@@ -29,6 +30,7 @@ export default function Discover() {
   return (
     <div className="bg-[#E7F1E6]">
       <Header />
+      <HeaderMobile />
       <MetaData />
 
       <div className="mt-5">

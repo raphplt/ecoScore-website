@@ -53,18 +53,24 @@ export default function ProductCard(props: any) {
     <div
       key={props._id}
       // style={{ borderColor: accentColor }}
-      className="mt-10 py-6 w-4/5 mx-auto mb-10 rounded-xl flex justify-between bg-slate-100 shadow-md flex-col lg:flex-row"
+      className="mt-10 py-6 sm:w-3/5 w-4/5 mx-auto mb-10 rounded-xl flex justify-between bg-slate-100 shadow-md flex-col lg:flex-row"
     >
       <div className="flex flex-col ml-5">
-        <div className="text-2xl mb-5">
-          {props.title}
-          <div style={{ color: accentColor }} className="font-semibold text-xl">
-            {scoreGlobal}
+        <div className="sm-relative flex gap-3">
+          <div className="sm:hidden relative h-12 w-12 bg-slate-500 rounded-lg"></div>
+          <div className="text-xl sm:text-2xl mb-5">
+            {props.title}
+            <div
+              style={{ color: accentColor }}
+              className="font-semibold text-sm sm:text-xl"
+            >
+              {scoreGlobal}
+            </div>
           </div>
         </div>
         <div className="flex gap-8 items-center ">
-          <div className="w-36 h-36 bg-slate-500 rounded-lg"></div>
-          <div className="flex flex-col gap-2">
+          <div className="w-36 h-36 bg-slate-500 rounded-lg hidden sm:flex"></div>
+          <div className="hidden sm:flex flex-col gap-2 ">
             <div className="flex items-center gap-2">
               <Image
                 src={require("../../public/assets/icons/icon-energy.png")}
@@ -115,19 +121,66 @@ export default function ProductCard(props: any) {
             </div>
           </div>
         </div>
+        <div className="flex sm:hidden gap-5  justify-center mb-4">
+          <div className="flex  items-center gap-2">
+            <Image
+              src={require("../../public/assets/icons/icon-energy.png")}
+              alt="Icone énergie"
+              className="w-6 h-6"
+            />
+            <div
+              className="py-2 px-4 rounded-3xl flex justify-center"
+              style={{
+                background: colorEnergy,
+              }}
+            >
+              {props.scoreEnergy}
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <Image
+              src={require("../../public/assets/icons/icon-carbone.png")}
+              alt="Icone carbone"
+              className="w-6 h-6"
+            />
+            <div
+              className="py-2 px-4 rounded-3xl flex justify-center"
+              style={{
+                background: colorCarbon,
+              }}
+            >
+              {props.scoreCarbon}
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <Image
+              src={require("../../public/assets/icons/icon-reparabilite.png")}
+              alt="Icone réparabilité"
+              className="w-6 h-6"
+            />
+            <div
+              className="py-2 px-4 rounded-3xl flex justify-center"
+              style={{
+                background: colorRepair,
+              }}
+            >
+              {props.scoreRepair}
+            </div>
+          </div>
+        </div>
       </div>
       <div className="flex flex-col mr-5 justify-center gap-5">
-        <div className="w-96 h-36 border-2 border-gray-500 rounded-lg pl-2">
+        <div className="w-full sm:w-96 h-36 border-2 border-gray-500 rounded-lg pl-2 hidden sm:flex flex-col">
           Infos supplémentaires
           <div>Lorem Ipsum</div>
           <div>Lorem Ipsum</div>
           <div>Lorem Ipsum</div>
         </div>
         <div className="flex gap-5 justify-evenly">
-          <div className="bg-secondary-color px-4 py-2 rounded-xl text-white">
+          <div className="bg-secondary-color text-center px-2 py-1 sm:px-4 sm:py-2 rounded-xl text-white">
             Voir les détails
           </div>
-          <div className="border-secondary-color border-2 px-4 py-2 rounded-xl text-secondary-color">
+          <div className="border-secondary-color text-center border-2 px-2 py-1 sm:px-4 sm:py-2 rounded-xl text-secondary-color">
             Ajouter au comparateur
           </div>
         </div>

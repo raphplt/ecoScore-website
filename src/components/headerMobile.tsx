@@ -27,7 +27,7 @@ export default function HeaderMobile() {
           />
         </button>
         <div
-          className={`absolute top-0 left-0 w-full h-full bg-white z-10 transition-all duration-300 ease-in-out ${
+          className={`absolute h-[100vh] top-0 left-0 w-full bg-white z-10 transition-all duration-300 ease-in-out ${
             menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >

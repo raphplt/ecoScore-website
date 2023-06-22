@@ -1,22 +1,16 @@
 import React, { useState, useContext } from "react";
 import { api } from "../services/index";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
-// import SearchContext from "../context/SearchContext";
-// import { ProductContext } from "@/context/ProductContext";
 import { useRouter } from "next/dist/client/router";
 
 export default function SearchBar() {
-  // const { setResults } = useContext(ProductContext);
   const router = useRouter();
   const [query, setQuery] = useState("");
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    // Envoie une requête GET à l'API avec les critères de recherche
     const response = await api.get(`/products/search?query=${query}`);
-    // Met à jour les résultats de la recherche dans le contexte
-    // setResults(response.data);
     localStorage.setItem("searchResults", JSON.stringify(response.data));
     if (router.pathname === "/") {
       router.push("/resultats");

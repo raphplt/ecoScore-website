@@ -7,10 +7,7 @@ export default function ShortCutButton(props: any) {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    // Envoie une requête GET à l'API avec les critères de recherche
     const response = await api.get(`/products/search?query=${props.title}`);
-    // Met à jour les résultats de la recherche dans le contexte
-    // setResults(response.data);
     localStorage.setItem("searchResults", JSON.stringify(response.data));
     if (router.pathname === "/") {
       router.push("/resultats");
@@ -25,7 +22,7 @@ export default function ShortCutButton(props: any) {
           </div>
         </button>
       </div>
-      <div className="text-center mt-3 text-sm text-white">{props.title}</div>
+      <div className="text-center mt-3 text-sm text-black">{props.title}</div>
     </div>
   );
 }

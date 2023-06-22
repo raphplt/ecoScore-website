@@ -33,16 +33,16 @@ export default function Header() {
           <Link href={"./"}>Accueil</Link>
         </div>
         <div>
-          <Link href={"./discover"}>Découvrir</Link>
+          <Link href={"/discover"}>Découvrir</Link>
         </div>
         <div>
-          <Link href={"./comparatif"}>Comparatif</Link>
+          <Link href={"/comparatif"}>Comparatif</Link>
         </div>
         <div>
-          <Link href={"./forum"}>Forum</Link>
+          <Link href={"/forum"}>Forum</Link>
         </div>
         <div>
-          <Link href={"./quizz"}>Quizz</Link>
+          <Link href={"/quizz"}>Quizz</Link>
         </div>
       </div>
       <div className="flex items-center gap-6">

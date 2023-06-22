@@ -14,7 +14,6 @@ body::-webkit-scrollbar {
     width: 8px;
 }
 
-
 body::-webkit-scrollbar-track:hover {
     background: #979292;
 }
@@ -25,3 +24,7 @@ body::-webkit-scrollbar-thumb {
     ;
 }
 
+::selection {
+    color: #f1f1f1;
+    background: #326C2D;
+}

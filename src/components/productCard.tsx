@@ -16,6 +16,7 @@ export default function ProductCard(props: any) {
     >
       <div className="flex flex-col ml-5">
         <div className="sm-relative flex gap-3">
+          <div className="text-xl mb-2">{props.title}</div>
           <div className="sm:hidden relative h-12 w-12 bg-slate-500 rounded-lg"></div>
         </div>
         <div className="flex gap-8 items-center ">

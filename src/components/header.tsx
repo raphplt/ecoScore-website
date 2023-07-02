@@ -8,8 +8,18 @@ export default function Header() {
   const [isShowing, setIsShowing] = useState(false);
   const [opacity, setOpacity] = useState(0);
   const [visible, setVisible] = useState(false);
+  const [user, setUser] = useState("");
+  const router = useRouter();
 
   const { asPath } = useRouter();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      setUser(user);
+      console.log(JSON.parse(user), user);
+    }
+  }, []);
 
   useEffect(() => {
     if (asPath !== "/") {
@@ -19,6 +29,12 @@ export default function Header() {
       setIsShowing(false);
     }
   }, [asPath]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser("");
+    router.reload();
+  };
 
   return (
     <div className="sm:flex-row sm:items-center sm:justify-between sm:w-[95%] sm:mx-auto sm:pt-2 sm:flex hidden">
@@ -57,17 +73,35 @@ export default function Header() {
         </button>
         {visible && (
           <div className="bg-white flex flex-col gap-2 rounded-lg absolute right-8 top-16 px-20 py-6 drop-shadow-md z-10">
-            <Link href={"./login"}>
-              <div className="text-center bg-slate-200 rounded-xl py-2 px-10 drop-shadow-sm">
-                Se connecter
+            {!user ? (
+              <div>
+                <Link href={"./login"}>
+                  <div className="text-center bg-slate-300 rounded-2xl py-2 px-12 drop-shadow-md">
+                    Se connecter
+                  </div>
+                </Link>
+                <div className="text-center my-2">ou</div>
+                <Link href={"./register"}>
+                  <div className="text-center bg-slate-300 rounded-2xl py-2 px-12 drop-shadow-md">
+                    S&apos;inscrire
+                  </div>
+                </Link>
               </div>
-            </Link>
-            <div className="text-center">ou</div>
-            <Link href={"./register"}>
-              <div className="text-center bg-slate-200 rounded-xl py-2 px-10 drop-shadow-sm">
-                S&apos;inscrire
+            ) : (
+              <div>
+                <Link href={"./user"}>
+                  <div className="text-center bg-slate-300 rounded-2xl py-2 px-12 drop-shadow-md">
+                    Mon compte
+                  </div>
+                </Link>
+                <div className="text-center my-2">ou</div>
+                <Link href={"./"} onClick={handleLogout}>
+                  <div className="text-center bg-slate-300 rounded-2xl py-2 px-12 drop-shadow-md">
+                    Se déconnecter
+                  </div>
+                </Link>
               </div>
-            </Link>
+            )}
           </div>
         )}
       </div>

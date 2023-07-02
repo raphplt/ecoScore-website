@@ -5,6 +5,7 @@ import Metadatas from "@/components/metadatas";
 import ProductCard from "@/components/productCard";
 import ProductCardSquare from "@/components/productCardSquare";
 import SearchBarResults from "@/components/searchBarResults";
+import { fetchProducts } from "@/services/products/products.services";
 import { useContext, useEffect, useState } from "react";
 
 export interface Product {
@@ -23,6 +24,7 @@ export default function Resultats() {
   const [resultats, setResultats] = useState<Product[]>([]);
   const [lengthResultats, setLengthResultats] = useState(6);
   const [isPhone, setIsPhone] = useState(false);
+  const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
     const storedResults = localStorage.getItem("searchResults");
@@ -41,6 +43,15 @@ export default function Resultats() {
       }
     });
   }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result: any = await fetchProducts();
+      setData(result);
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="h-full">
       <Metadatas />
@@ -99,6 +110,23 @@ export default function Resultats() {
         </button>
       </div>
       <div className="mt-24 mb-24 text-center">Produits en vedette</div>
+      <div className="flex items-start gap-12 mt-4 overflow-scroll overflow-y-hidden pb-4">
+        {data &&
+          data
+            .slice(0, lengthResultats)
+            .map((result) => (
+              <ProductCardSquare
+                key={result._id}
+                title={result.title}
+                type={result.type}
+                scoreEnergy={result.scoreEnergy}
+                scoreCarbon={result.scoreCarbon}
+                scoreRepair={result.scoreRepair}
+                trendScore={result.trendScore}
+                id={result._id}
+              />
+            ))}
+      </div>
       <div className="mt-24 mb-24 text-center">Voir aussi</div>
       <Footer />
     </div>

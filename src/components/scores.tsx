@@ -56,7 +56,7 @@ export default function Score(props: any) {
           className="w-6 h-6"
         />
         <div
-          className="py-1 pl-2"
+          className="py-1 pl-2 rounded-xl"
           style={{
             width: 75 * props.scoreEnergy,
             background: colorEnergy,
@@ -72,7 +72,7 @@ export default function Score(props: any) {
           className="w-6 h-6"
         />
         <div
-          className="py-1 pl-2"
+          className="py-1 pl-2 rounded-xl"
           style={{
             width: 75 * props.scoreCarbon,
             background: colorCarbon,
@@ -88,7 +88,7 @@ export default function Score(props: any) {
           className="w-6 h-6"
         />
         <div
-          className="py-1 pl-2"
+          className="py-1 pl-2 rounded-xl"
           style={{
             width: 75 * props.scoreRepair,
             background: colorRepair,

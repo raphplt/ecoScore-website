@@ -66,6 +66,11 @@ export default function ProductCardSquare(props: any) {
     router.push(`/product/${props.id}`);
   };
 
+  const handleCompare = () => {
+    localStorage.setItem("compare", JSON.stringify(props.id));
+    router.push(`/comparatif`);
+  };
+
   return (
     <div
       key={props._id}
@@ -152,9 +157,12 @@ export default function ProductCardSquare(props: any) {
           >
             Voir les détails
           </button>
-          <div className="border-secondary-color border-2 px-2 py-1 rounded-xl text-center text-secondary-color">
+          <button
+            onClick={handleCompare}
+            className="border-secondary-color border-2 hover:bg-slate-100 px-2 py-1 rounded-xl text-center text-secondary-color"
+          >
             Comparer
-          </div>
+          </button>
         </div>
       </div>
     </div>

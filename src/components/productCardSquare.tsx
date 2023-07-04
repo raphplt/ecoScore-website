@@ -56,6 +56,10 @@ export default function ProductCardSquare(props: any) {
   }, [props.scoreRepair]);
 
   const handleTrend = async () => {
+    const user = localStorage.getItem("user");
+    if (!user) {
+      router.push("/login");
+    }
     const res = await addTrendProduct({ idUser, idProduct });
     if (res) {
       setScore(score + 1);
@@ -67,7 +71,7 @@ export default function ProductCardSquare(props: any) {
   };
 
   const handleCompare = () => {
-    localStorage.setItem("compare", JSON.stringify(props.id));
+    localStorage.setItem("compare", props.id);
     router.push(`/comparatif`);
   };
 
@@ -75,13 +79,14 @@ export default function ProductCardSquare(props: any) {
     <div
       key={props._id}
       // style={{ borderColor: accentColor }}
-      className="py-6 w-fit  rounded-xl flex justify-between bg-slate-100 drop-shadow-md flex-col lg:flex-row gap-8"
+      className="py-6 w-fit rounded-xl flex justify-between bg-slate-100 drop-shadow-md flex-col lg:flex-row gap-8"
     >
       <div className="flex flex-col ml-5">
         <div className="b-5">
           <div className="text-xl truncate overflow-hidden w-36">
             {props.title}
           </div>
+
           <div className="flex gap-4 py-4">
             <button
               className=" w-fit py-1 px-2 bg-slate-300 rounded-xl mr-0 text-sm"
@@ -98,10 +103,10 @@ export default function ProductCardSquare(props: any) {
           </div>
         </div>
         <div className="flex gap-8 items-center ">
-          <div className="w-36 h-36 bg-slate-500 rounded-lg"></div>
+          <div className="w-36 h-36 bg-slate-500 rounded-lg hidden sm:flex"></div>
         </div>
       </div>
-      <div className="flex flex-col mr-5 justify-center gap-5">
+      <div className="flex flex-col sm:mr-5 mx-4 sm:mx-0 justify-center items-center gap-5">
         <div className="flex gap-5">
           <div className="flex flex-col items-center gap-2">
             <Image

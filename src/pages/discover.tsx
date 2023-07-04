@@ -35,7 +35,7 @@ export default function Discover() {
 
       <div className="mt-5">
         <h1 className="text-center text-3xl">Découvertes</h1>
-        <div className="w-2/3 mx-auto">
+        <div className="w-11/12 sm:w-2/3 mx-auto">
           <div className="w-11/12 mx-auto">
             <h2 className=" mt-16 text-2xl text-secondary-color font-semibold">
               Produits tendances

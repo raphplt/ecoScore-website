@@ -13,7 +13,9 @@ export default function SearchBarHeader() {
 
     const response = await api.get(`/products/search?query=${query}`);
     if (path === "/comparatif") {
-      localStorage.setItem("compare2", JSON.stringify(response.data));
+      const data = localStorage.getItem("compare");
+      if (data) localStorage.setItem("compare2", JSON.stringify(response.data));
+      else localStorage.setItem("compare", JSON.stringify(response.data));
     }
 
     localStorage.setItem("searchResults", JSON.stringify(response.data));

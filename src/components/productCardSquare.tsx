@@ -71,7 +71,7 @@ export default function ProductCardSquare(props: any) {
   };
 
   const handleCompare = () => {
-    localStorage.setItem("compare", props.id);
+    localStorage.setItem("compare", JSON.stringify(props));
     router.push(`/comparatif`);
   };
 

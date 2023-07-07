@@ -17,16 +17,17 @@ export default function Comparatif() {
   const [score2, setScore2] = useState(0);
 
   useEffect(() => {
-    const item = localStorage.getItem("compare");
+    const item: any = localStorage.getItem("compare");
+    setDatas1(JSON.parse(item));
     console.log(item);
-    if (item) {
-      const fetchDatas = async () => {
-        const result = await fetchProduct(item);
-        setDatas1(result);
-        setScore1(result.scoreEnergy + result.scoreCarbon + result.scoreRepair);
-      };
-      fetchDatas();
-    }
+    // if (item) {
+    //   const fetchDatas = async () => {
+    //     const result = await fetchProduct(item);
+    //     setDatas1(result);
+    //     setScore1(result.scoreEnergy + result.scoreCarbon + result.scoreRepair);
+    //   };
+    //   fetchDatas();
+    // }
   }, []);
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export default function Comparatif() {
         <div className="mb-24 mt-12">{!datas1 ? <SearchBar /> : <></>}</div>
         <div className="flex mx-auto w-11/12">
           <div className="w-1/3 flex justify-aroundf mx-auto flex-col mb-96">
-            {datas1.length === 0 ? (
+            {datas1 && datas1.length === 0 ? (
               <div>
                 <div className="text-center text-lg mb-6">
                   Choisir un produit à comparer
@@ -69,22 +70,24 @@ export default function Comparatif() {
               </div>
             ) : (
               <div className="text-center mb-8">
-                <h2 className="text-lg">{datas1.title}</h2>
+                <h2 className="text-lg">
+                  {datas1.length > 0 && datas1[0].title}
+                </h2>
               </div>
             )}
-            {datas1.length !== 0 && (
+            {datas1.length > 0 && (
               <div className="flex flex-col">
                 <Score
-                  scoreEnergy={datas1.scoreEnergy}
-                  scoreCarbon={datas1.scoreCarbon}
-                  scoreRepair={datas1.scoreRepair}
+                  scoreEnergy={datas1[0].scoreEnergy}
+                  scoreCarbon={datas1[0].scoreCarbon}
+                  scoreRepair={datas1[0].scoreRepair}
                 />
               </div>
             )}
             {datas1.length !== 0 && (
               <button
                 onClick={clearDatas1}
-                className="mt-12 bg-slate-400 rounded-2xl py-1 drop-shadow-sm px-10 w-fit mx-auto"
+                className="mt-12 bg-slate-300 rounded-2xl py-1 drop-shadow-sm px-10 w-fit mx-auto"
               >
                 Modifier le produit
               </button>
@@ -113,20 +116,12 @@ export default function Comparatif() {
             {datas2.length > 0 && (
               <button
                 onClick={clearDatas2}
-                className="mt-12 bg-slate-400 rounded-2xl py-1 drop-shadow-sm px-10 w-fit mx-auto"
+                className="mt-12 bg-slate-300 rounded-2xl py-1 drop-shadow-sm px-10 w-fit mx-auto"
               >
                 Modifier le produit
               </button>
             )}
           </div>
-        </div>
-        <div className="">
-          <div className="text-center mb-2">Gagnant : </div>
-          {datas1.length > 0 && datas2.length > 0 && score1 < score2 ? (
-            <div className="text-center">{datas1 && datas1.title}</div>
-          ) : (
-            <div className="text-center">{datas2 && datas2[0].title}</div>
-          )}
         </div>
       </div>
 

@@ -13,10 +13,15 @@ export default function SearchBar() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const response = await searchBar(query);
-    localStorage.setItem("searchResults", JSON.stringify(response));
-    if (router.pathname === "/") {
-      router.push("/resultats");
-    } else router.reload();
+    if (router.pathname === "/comparatif") {
+      localStorage.setItem("compare", JSON.stringify(response));
+      router.reload();
+    } else {
+      localStorage.setItem("searchResults", JSON.stringify(response));
+      if (router.pathname === "/") {
+        router.push("/resultats");
+      } else router.reload();
+    }
   };
 
   const handleChange = async (e: any) => {

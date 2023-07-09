@@ -43,7 +43,7 @@ export default function Header() {
           <Image
             src={require("../../public/assets/ecoscoreLogo.png")}
             alt="logo"
-            className="w-16 "
+            className="w-12"
           />
         </Link>
         <div className="flex flex-row lg:gap-24 sm:gap-12 text-[#1B4332] font-semibold ml-64">

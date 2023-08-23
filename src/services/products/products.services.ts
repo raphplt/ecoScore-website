@@ -13,3 +13,10 @@ export const searchBar = async (search: any) => {
     .get(`/products/search?query=${search}`)
     .then((response) => response.data);
 };
+
+export const getProductsByCategory = async (category: any) => {
+  return await api
+    .get(`/products/category/${category}`)
+    .then((response) => response.data);
+};
+  

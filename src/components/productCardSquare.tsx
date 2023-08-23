@@ -89,7 +89,7 @@ export default function ProductCardSquare(props: any) {
 
           <div className="flex gap-4 py-4">
             <button
-              className=" w-fit py-1 px-2 bg-slate-300 rounded-xl mr-0 text-sm"
+              className=" w-fit py-1 px-2 bg-slate-300 rounded-xl mr-0 text-sm "
               onClick={handleTrend}
             >
               {score}🔥
@@ -115,7 +115,7 @@ export default function ProductCardSquare(props: any) {
               className="w-6 h-6"
             />
             <div
-              className="py-2 px-4 rounded-3xl flex justify-center"
+              className="py-2 px-4 rounded-3xl flex justify-center font-semibold"
               style={{
                 background: colorEnergy,
               }}
@@ -130,7 +130,7 @@ export default function ProductCardSquare(props: any) {
               className="w-6 h-6"
             />
             <div
-              className="py-2 px-4 rounded-3xl flex justify-center"
+              className="py-2 px-4 rounded-3xl flex justify-center font-semibold"
               style={{
                 background: colorCarbon,
               }}
@@ -145,7 +145,7 @@ export default function ProductCardSquare(props: any) {
               className="w-6 h-6"
             />
             <div
-              className="py-2 px-4 rounded-3xl flex justify-center"
+              className="py-2 px-4 rounded-3xl flex justify-center font-semibold"
               style={{
                 background: colorRepair,
               }}

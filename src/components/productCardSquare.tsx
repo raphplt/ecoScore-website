@@ -85,7 +85,7 @@ export default function ProductCardSquare(props: any) {
   return (
     <div
       key={props._id}
-      className="py-4 w-fit rounded-xl flex justify-between bg-slate-100 drop-shadow-sm border-[1px] border-slate-400 flex-col lg:flex-row gap-6"
+      className="py-4 w-fit rounded-xl flex justify-between bg-slate-100 drop-shadow-sm flex-col lg:flex-row gap-6"
     >
       <div className="flex flex-col ml-5">
         <div className="b-5">
@@ -121,7 +121,7 @@ export default function ProductCardSquare(props: any) {
               className="w-6 h-6"
             />
             <div
-              className={`py-2 px-4 bg-opacity-10 bg rounded-3xl flex justify-center text-white drop-shadow-md  
+              className={`py-2 px-4 bg-opacity-10 bg rounded-3xl flex justify-center text-white drop-shadow-sm
                 }`}
               style={{ background: colorEnergy }}
             >
@@ -135,7 +135,7 @@ export default function ProductCardSquare(props: any) {
               className="w-6 h-6"
             />
             <div
-              className="py-2 px-4 rounded-3xl flex justify-center text-white drop-shadow-md"
+              className="py-2 px-4 rounded-3xl flex justify-center text-white drop-shadow-sm"
               style={{
                 background: colorCarbon,
               }}
@@ -150,7 +150,7 @@ export default function ProductCardSquare(props: any) {
               className="w-6 h-6"
             />
             <div
-              className="py-2 px-4 rounded-3xl flex justify-center text-white drop-shadow-md"
+              className="py-2 px-4 rounded-3xl flex justify-center text-white drop-shadow-sm"
               style={{
                 background: colorRepair,
               }}

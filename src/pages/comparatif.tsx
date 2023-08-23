@@ -52,7 +52,7 @@ export default function Comparatif() {
   };
 
   return (
-    <div className="bg-[#E7F1E6]">
+    <div className="">
       <Header />
       <MetaData />
       <div className="w-1/2 h-[70vh] py-8 mx-auto shadow-md bg-slate-100 mt-24 mb-64 rounded-xl">

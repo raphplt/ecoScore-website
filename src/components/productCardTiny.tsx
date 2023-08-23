@@ -48,10 +48,10 @@ export default function ProductCardTiny(props: any) {
   return (
     <div
       key={props._id}
-      className="py-2 px-6 w-fit rounded-xl flex border-[1px] border-slate-400 justify-between bg-slate-100 drop-shadow-sm flex-col lg:flex-row gap-6"
+      className="py-2 mx-1 px-5 w-fit rounded-xl flex justify-between bg-slate-100 drop-shadow-sm flex-col lg:flex-row gap-6"
     >
       <div className="flex flex-col">
-        <div className="b-2  mx-auto">
+        <div className="">
           <div className="flex gap-4 py-2">
             <button
               className="w-fit py-1 px-2 bg-slate-300 rounded-xl mr-0 text-sm"

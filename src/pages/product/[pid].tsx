@@ -42,9 +42,9 @@ export default function Product() {
 
       <div className="w-5/6 sm:w-3/4 flex mx-auto mt-6 sm:mt-24 gap-4 sm:gap-20 justify-evenly">
         <div className="bg-slate-500 rounded-xl sm:w-96 sm:h-96 w-24 h-24 mt-24 hidden sm:flex"></div>
-        <div className="flex gap-5 flex-col rounded-lg py-10  px-2 sm:px-24">
+        <div className="flex gap-5 flex-col rounded-lg py-10 px-2 sm:px-24">
           <div className="mb-6 flex flex-col gap-5 border-b-[1px] border-slate-300 pb-4">
-            <div className="bg-slate-500 rounded-xl sm:w-96 sm:h-96 w-48 h-48 mx-auto sm:hidden "></div>
+            <div className="bg-slate-500 rounded-xl sm:w-96 sm:h-96 w-48 h-48 mx-auto sm:hidden"></div>
 
             <div className="text-2xl">{data.title}</div>
             <div>{data.type}</div>

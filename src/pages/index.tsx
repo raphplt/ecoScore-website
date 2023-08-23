@@ -74,7 +74,7 @@ export default function Index() {
               ))}
           </div>
         </div>
-        <div className="pb-16">
+        <div className="pb-32">
           <h2 className="mb-16 mt-28 py-5 px-16 rounded-xl text-xl w-fit mx-auto text-[#1B4332] font-semibold backdrop-blur-sm bg-white/30">
             En utilisant EcoScore, vous participez à un monde plus vert:
           </h2>
@@ -108,7 +108,7 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 grid-rows-3 w-full gap-y-48 mb-24 mt-48">
+      <div className="grid grid-cols-2 grid-rows-3 w-full gap-y-48 mb-24 mt-96">
         <div className="mx-auto w-2/3">
           <div className=" text-left mt-5 backdrop-blur-sm bg-white/30 rounded-xl py-8 px-24">
             <h2 className="text-2xl mb-4">

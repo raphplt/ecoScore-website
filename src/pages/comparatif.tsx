@@ -19,7 +19,6 @@ export default function Comparatif() {
   useEffect(() => {
     const item: any = localStorage.getItem("compare");
     setDatas1(JSON.parse(item));
-    console.log(item);
     // if (item) {
     //   const fetchDatas = async () => {
     //     const result = await fetchProduct(item);
@@ -71,11 +70,11 @@ export default function Comparatif() {
             ) : (
               <div className="text-center mb-8">
                 <h2 className="text-lg">
-                  {datas1.length > 0 && datas1[0].title}
+                  {datas1 && datas1.length > 0 && datas1[0].title}
                 </h2>
               </div>
             )}
-            {datas1.length > 0 && (
+            {datas1 && datas1.length > 0 && (
               <div className="flex flex-col">
                 <Score
                   scoreEnergy={datas1[0].scoreEnergy}
@@ -84,7 +83,7 @@ export default function Comparatif() {
                 />
               </div>
             )}
-            {datas1.length !== 0 && (
+            {datas1 && datas1.length !== 0 && (
               <button
                 onClick={clearDatas1}
                 className="mt-12 bg-slate-300 rounded-2xl py-1 drop-shadow-sm px-10 w-fit mx-auto"
@@ -94,7 +93,7 @@ export default function Comparatif() {
             )}
           </div>
           <div className="w-1/3 flex justify-aroundf mx-auto flex-col mb-96">
-            {datas2.length === 0 ? (
+            {datas2 && datas2.length === 0 && datas1 && datas1.length > 0 ? (
               <div>
                 <div className="text-center text-lg mb-6">
                   Choisir un produit à comparer
@@ -102,7 +101,9 @@ export default function Comparatif() {
                 <SearchBarHeader />
               </div>
             ) : (
-              <h2 className="text-lg text-center mb-8">{datas2[0].title}</h2>
+              <h2 className="text-lg text-center mb-8">
+                {datas2 && datas2.length > 0 && datas2[0].title}
+              </h2>
             )}
             <div className="flex flex-col">
               {datas2.length > 0 && (

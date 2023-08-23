@@ -16,12 +16,19 @@ export default function ProductCardSquare(props: any) {
   const router = useRouter();
 
   useEffect(() => {
-    if ((props.scoreEnergy + props.scoreCarbon + props.scoreRepair) / 3 <= 5) {
+    if ((props.scoreEnergy + props.scoreCarbon + props.scoreRepair) / 3 <= 3) {
       setScoreGlobal("Mauvais");
-      setAccentColor("#E15C5C");
+      setAccentColor("#53C66C");
+    }
+    if (
+      (props.scoreEnergy + props.scoreCarbon + props.scoreRepair) / 3 > 3 &&
+      (props.scoreEnergy + props.scoreCarbon + props.scoreRepair) / 3 <= 5
+    ) {
+      setScoreGlobal("Moyen");
+      setAccentColor("#EEAA5A");
     } else {
       setScoreGlobal("Bon");
-      setAccentColor(`var(--secondary-color)`);
+      setAccentColor("#53C66C");
     }
   }, [props.scoreEnergy, props.scoreCarbon, props.scoreRepair]);
 
@@ -78,8 +85,7 @@ export default function ProductCardSquare(props: any) {
   return (
     <div
       key={props._id}
-      // style={{ borderColor: accentColor }}
-      className="py-6 w-fit rounded-xl flex justify-between bg-slate-100 drop-shadow-md flex-col lg:flex-row gap-8"
+      className="py-4 w-fit rounded-xl flex justify-between bg-slate-100 drop-shadow-sm border-[1px] border-slate-400 flex-col lg:flex-row gap-6"
     >
       <div className="flex flex-col ml-5">
         <div className="b-5">
@@ -115,10 +121,9 @@ export default function ProductCardSquare(props: any) {
               className="w-6 h-6"
             />
             <div
-              className="py-2 px-4 rounded-3xl flex justify-center font-semibold"
-              style={{
-                background: colorEnergy,
-              }}
+              className={`py-2 px-4 bg-opacity-10 bg rounded-3xl flex justify-center text-white drop-shadow-md  
+                }`}
+              style={{ background: colorEnergy }}
             >
               {props.scoreEnergy}
             </div>
@@ -130,7 +135,7 @@ export default function ProductCardSquare(props: any) {
               className="w-6 h-6"
             />
             <div
-              className="py-2 px-4 rounded-3xl flex justify-center font-semibold"
+              className="py-2 px-4 rounded-3xl flex justify-center text-white drop-shadow-md"
               style={{
                 background: colorCarbon,
               }}
@@ -145,7 +150,7 @@ export default function ProductCardSquare(props: any) {
               className="w-6 h-6"
             />
             <div
-              className="py-2 px-4 rounded-3xl flex justify-center font-semibold"
+              className="py-2 px-4 rounded-3xl flex justify-center text-white drop-shadow-md"
               style={{
                 background: colorRepair,
               }}
@@ -157,14 +162,14 @@ export default function ProductCardSquare(props: any) {
 
         <div className="flex flex-col gap-5 justify-evenly mt-2">
           <button
-            className="bg-secondary-color hover:bg-[#2e7727] px-4 py-2 rounded-xl text-white text-center"
+            className="bg-secondary-color text-sm transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 hover:bg-white hover:text-secondary-color hover:border-secondary-color border-2 duration-300 px-6 py-2 rounded-3xl text-white text-center"
             onClick={handleDetails}
           >
             Voir les détails
           </button>
           <button
             onClick={handleCompare}
-            className="border-secondary-color border-2 hover:bg-slate-100 px-2 py-1 rounded-xl text-center text-secondary-color"
+            className="border-secondary-color text-sm border-2 px-6 py-1 rounded-3xl text-center text-secondary-color transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-secondary-color hover:text-white duration-300"
           >
             Comparer
           </button>

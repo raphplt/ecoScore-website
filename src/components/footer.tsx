@@ -14,9 +14,9 @@ export default function Footer() {
           <div className="bg-[#326C2D] pt-2 ">
             <div className="w-full md:full mb-4 ">
               <div className="text-white mb-2 text-[14px] flex divide-x justify-center items-center flex-wrap">
-                <p className="text-center px-14">A propos</p>
-                <p className="text-center px-14">Pour mieux nous connaître</p>
-                <p className="text-center px-14">Besoin d&#39;aide ?</p>
+                <Link className="text-center px-14"  href={"/about"}>A propos</Link>
+                <Link className="text-center px-14"  href={"/connaitre"}>Pour mieux nous connaître</Link>
+                <Link className="text-center px-14"  href={"/help"}>Besoin d&#39;aide ?</Link>
               </div>
               <p className="text-gray-400 text-[14px]">...</p>
               <p className="text-gray-400 text-[14px]">...</p>

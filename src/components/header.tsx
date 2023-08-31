@@ -82,13 +82,14 @@ export default function Header() {
                       Se connecter
                     </div>
                   </Link>
-                  <div className="text-center my-2">ou</div>
+                  <br />
                   <Link href={"./register"}>
                     <div className="text-center bg-slate-300 rounded-2xl py-2 px-12 drop-shadow-md">
                       S&apos;inscrire
                     </div>
                   </Link>
                 </div>
+                
               ) : (
                 <div>
                   <Link href={"./user"}>

@@ -1,8 +1,6 @@
 import Header from "@/components/header";
-import Image from 'next/image';
-import lucas from "../../public/assets/index/indexImage1.png";
 import Footer from "@/components/footer";
-import MetaData from "@/components/metadatas";
+import Image from 'next/image';
 
 
 export default function Connaitre() {

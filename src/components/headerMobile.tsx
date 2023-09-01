@@ -27,8 +27,8 @@ export default function HeaderMobile() {
           />
         </button>
         <div
-          className={`absolute h-[100vh] top-0 left-0 w-full bg-white z-10 transition-all duration-300 ease-in-out ${
-            menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          className={`fixed inset-0 overflow-hidden w-full h-full top-0 left-0 bg-white transition-all z-40 duration-300 ease-in-out ${
+            menuOpen ? "opacity-80 visible" : "opacity-0 invisible"
           }`}
         >
           <ul className="pt-20 text-center flex flex-col gap-10 text-xl">

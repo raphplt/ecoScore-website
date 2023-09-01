@@ -24,6 +24,6 @@
     "**/*.tsx",
     "theme.js",
     "src/pages/index.tsx"
-  ],
+, "src/pages/help.jsx"  ],
   "exclude": ["node_modules"]
 }

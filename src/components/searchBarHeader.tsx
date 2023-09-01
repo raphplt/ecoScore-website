@@ -6,15 +6,25 @@ import { useRouter } from "next/dist/client/router";
 export default function SearchBarHeader() {
   const router = useRouter();
   const [query, setQuery] = useState("");
+  const path = router.pathname;
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     const response = await api.get(`/products/search?query=${query}`);
+    if (path === "/comparatif") {
+      const data = localStorage.getItem("compare");
+      if (data) localStorage.setItem("compare2", JSON.stringify(response.data));
+      else localStorage.setItem("compare", JSON.stringify(response.data));
+    }
+
     localStorage.setItem("searchResults", JSON.stringify(response.data));
+
     if (router.pathname === "/") {
       router.push("/resultats");
-    } else router.reload();
+    } else {
+        router.reload();
+    }
   };
 
   return (

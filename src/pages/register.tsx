@@ -124,7 +124,7 @@ export default function Register() {
               </button>
               <p className="text-sm text-center mt-4">
                 <Link href={"/login"}>
-                  Vous n&#39;avez pas de compte ? Inscription
+                  Vous avez deja un compte ? Se connecter
                 </Link>
               </p>
             </form>

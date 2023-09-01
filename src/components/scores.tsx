@@ -9,12 +9,19 @@ export default function Score(props: any) {
   const [colorRepair, setColorRepair] = useState("");
 
   useEffect(() => {
-    if ((props.scoreEnergy + props.scoreCarbon + props.scoreRepair) / 3 <= 5) {
-      setScoreGlobal("Mauvais résultat");
-      setAccentColor("#E15C5C");
+    if ((props.scoreEnergy + props.scoreCarbon + props.scoreRepair) / 3 <= 3) {
+      setScoreGlobal("Mauvais");
+      setAccentColor("#53C66C");
+    }
+    if (
+      (props.scoreEnergy + props.scoreCarbon + props.scoreRepair) / 3 > 3 &&
+      (props.scoreEnergy + props.scoreCarbon + props.scoreRepair) / 3 <= 5
+    ) {
+      setScoreGlobal("Moyen");
+      setAccentColor("#EEAA5A");
     } else {
-      setScoreGlobal("Bon résultat");
-      setAccentColor(`var(--secondary-color)`);
+      setScoreGlobal("Bon");
+      setAccentColor("#E15C5C");
     }
   }, [props.scoreEnergy, props.scoreCarbon, props.scoreRepair]);
 
@@ -56,14 +63,13 @@ export default function Score(props: any) {
           className="w-6 h-6"
         />
         <div
-          className="py-1 pl-2"
+          className="py-3 pl-2 rounded-2xl"
           style={{
-            width: 75 * props.scoreEnergy,
+            width: 50 * props.scoreEnergy,
             background: colorEnergy,
           }}
-        >
-          {props.scoreEnergy}
-        </div>
+        ></div>
+        {props.scoreEnergy}
       </div>
       <div className="flex items-center gap-2">
         <Image
@@ -72,14 +78,13 @@ export default function Score(props: any) {
           className="w-6 h-6"
         />
         <div
-          className="py-1 pl-2"
+          className="py-3 pl-2 rounded-2xl"
           style={{
-            width: 75 * props.scoreCarbon,
+            width: 50 * props.scoreCarbon,
             background: colorCarbon,
           }}
-        >
-          {props.scoreCarbon}
-        </div>
+        ></div>
+        {props.scoreCarbon}
       </div>
       <div className="flex items-center gap-2">
         <Image
@@ -88,14 +93,13 @@ export default function Score(props: any) {
           className="w-6 h-6"
         />
         <div
-          className="py-1 pl-2"
+          className="py-3 pl-2 rounded-2xl"
           style={{
-            width: 75 * props.scoreRepair,
+            width: 50 * props.scoreRepair,
             background: colorRepair,
           }}
-        >
-          {props.scoreRepair}
-        </div>
+        ></div>
+        {props.scoreRepair}
       </div>
     </div>
   );

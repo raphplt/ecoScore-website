@@ -1,12 +1,9 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import MetaData from "@/components/metadatas";
-import ProductCard from "@/components/productCard";
 import Score from "@/components/scores";
-import SearchBar from "@/components/searchBar";
+import SearchBarComparatif from "@/components/searchBarComparatif";
 import SearchBarHeader from "@/components/searchBarHeader";
-import { fetchProduct } from "@/services/products/products.services";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Comparatif() {
@@ -19,14 +16,6 @@ export default function Comparatif() {
   useEffect(() => {
     const item: any = localStorage.getItem("compare");
     setDatas1(JSON.parse(item));
-    // if (item) {
-    //   const fetchDatas = async () => {
-    //     const result = await fetchProduct(item);
-    //     setDatas1(result);
-    //     setScore1(result.scoreEnergy + result.scoreCarbon + result.scoreRepair);
-    //   };
-    //   fetchDatas();
-    // }
   }, []);
 
   useEffect(() => {
@@ -57,10 +46,12 @@ export default function Comparatif() {
       <MetaData />
       <div className="w-1/2 h-[70vh] py-8 mx-auto shadow-md bg-slate-100 mt-24 mb-64 rounded-xl">
         <h1 className="text-center mb-10 text-4xl font-libre">Comparatif</h1>
-        <div className="mb-24 mt-12">{!datas1 ? <SearchBar /> : <></>}</div>
+        <div className="mb-24 mt-12">
+          {!datas1 ? <SearchBarComparatif /> : <></>}
+        </div>
         <div className="flex mx-auto w-11/12">
           <div className="w-1/3 flex justify-aroundf mx-auto flex-col mb-96">
-            {datas1 && datas1.length === 0 ? (
+            {datas1 && JSON.stringify(datas1).length === 0 ? (
               <div>
                 <div className="text-center text-lg mb-6">
                   Choisir un produit à comparer
@@ -70,20 +61,20 @@ export default function Comparatif() {
             ) : (
               <div className="text-center mb-8">
                 <h2 className="text-lg">
-                  {datas1 && datas1.length > 0 && datas1[0].title}
+                  {datas1 && JSON.stringify(datas1).length > 0 && datas1.title}
                 </h2>
               </div>
             )}
-            {datas1 && datas1.length > 0 && (
-              <div className="flex flex-col">
-                <Score
-                  scoreEnergy={datas1[0].scoreEnergy}
-                  scoreCarbon={datas1[0].scoreCarbon}
-                  scoreRepair={datas1[0].scoreRepair}
-                />
-              </div>
-            )}
-            {datas1 && datas1.length !== 0 && (
+            {/* {datas1 && JSON.stringify(datas1).length > 0 && ( */}
+            <div className="flex flex-col">
+              {/* <Score
+                  scoreEnergy={datas1.scoreEnergy}
+                  scoreCarbon={datas1.scoreCarbon}
+                  scoreRepair={datas1.scoreRepair}
+                /> */}
+            </div>
+            {/* )} */}
+            {datas1 && JSON.stringify(datas1).length !== 0 && (
               <button
                 onClick={clearDatas1}
                 className="mt-12 bg-slate-300 rounded-2xl py-1 drop-shadow-sm px-10 w-fit mx-auto"
@@ -93,7 +84,10 @@ export default function Comparatif() {
             )}
           </div>
           <div className="w-1/3 flex justify-aroundf mx-auto flex-col mb-96">
-            {datas2 && datas2.length === 0 && datas1 && datas1.length > 0 ? (
+            {datas2 &&
+            datas2.length === 0 &&
+            datas1 &&
+            JSON.stringify(datas1).length > 0 ? (
               <div>
                 <div className="text-center text-lg mb-6">
                   Choisir un produit à comparer
@@ -102,15 +96,15 @@ export default function Comparatif() {
               </div>
             ) : (
               <h2 className="text-lg text-center mb-8">
-                {datas2 && datas2.length > 0 && datas2[0].title}
+                {datas2 && datas2.length > 0 && datas2.title}
               </h2>
             )}
             <div className="flex flex-col">
               {datas2.length > 0 && (
                 <Score
-                  scoreEnergy={datas2[0].scoreEnergy}
-                  scoreCarbon={datas2[0].scoreCarbon}
-                  scoreRepair={datas2[0].scoreRepair}
+                  scoreEnergy={datas2.scoreEnergy}
+                  scoreCarbon={datas2.scoreCarbon}
+                  scoreRepair={datas2.scoreRepair}
                 />
               )}
             </div>

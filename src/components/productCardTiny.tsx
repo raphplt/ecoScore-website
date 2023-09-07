@@ -48,7 +48,7 @@ export default function ProductCardTiny(props: any) {
   return (
     <div
       key={props._id}
-      className="py-2 mx-1 px-5 w-fit rounded-xl flex justify-between bg-slate-100 drop-shadow-sm flex-col lg:flex-row gap-6"
+      className="py-2 mx-1 border-[1px] border-gray-900 px-5 w-fit rounded-xl flex justify-between bg-slate-100 drop-shadow-sm flex-col lg:flex-row gap-6"
     >
       <div className="flex flex-col">
         <div className="">
@@ -66,7 +66,7 @@ export default function ProductCardTiny(props: any) {
               {scoreGlobal}
             </div>
           </div>
-          <div className="text-lg h-14 overflow-hidden w-[90%]">
+          <div className="text-md h-14 overflow-hidden w-[90%]">
             {props.title}
           </div>
         </div>

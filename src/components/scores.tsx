@@ -54,6 +54,7 @@ export default function Score(props: any) {
       setColorRepair("#E15C5C");
     }
   }, [props.scoreRepair]);
+
   return (
     <div className="hidden sm:flex flex-col gap-2 ">
       <div className="flex items-center gap-2">

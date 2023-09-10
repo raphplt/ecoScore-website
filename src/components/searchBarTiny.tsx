@@ -53,7 +53,7 @@ export default function SearchBarTiny() {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="flex items-center border-2 rounded-3xl py-5 border-secondary-color hover:border-[#579452] w-[80%] sm:w-[70%] h-10 mx-auto"
+        className="flex items-center border-2 rounded-3xl py-5 border-secondary-color hover:border-[#579452] w-[80%] sm:w-[90%] h-10 mx-auto"
       >
         <input
           type="text"
@@ -75,7 +75,7 @@ export default function SearchBarTiny() {
           <MagnifyingGlassIcon className="sm:h-6 sm:w-6 h-4 w-4" />
         </button>
       </form>
-      <div className=" flex flex-col mt-6 mx-auto bg-opacity-40  ml-24 rounded-b-md">
+      <div className=" flex flex-col mt-4 mx-auto bg-opacity-40  ml-8 rounded-b-md">
         {suggest &&
           suggest.slice(0, 3).map((suggestion: any) => (
             <div key={suggestion.id} className="py-1">

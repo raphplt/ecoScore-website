@@ -23,7 +23,8 @@
     "**/*.ts",
     "**/*.tsx",
     "theme.js",
-    "src/pages/index.tsx"
-, "src/pages/help.jsx"  ],
+    "src/pages/index.tsx",
+    "src/pages/help.tsx"
+  ],
   "exclude": ["node_modules"]
 }

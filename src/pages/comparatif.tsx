@@ -97,10 +97,10 @@ export default function Comparatif() {
             ) : (
               datas1 && (
                 <div
-                  className="text-center bg-slate-200 py-12 border-4 px-10 rounded-lg mb-5"
+                  className="text-center bg-slate-200 py-4 border-4 px-10 rounded-lg mb-5"
                   style={{ borderColor: datas1Color }}
                 >
-                  <h2 className="text-lg mb-5">{datas1 && datas1.title}</h2>
+                  <h2 className="text-lg mb-10">{datas1 && datas1.title}</h2>
                   <div className="flex flex-col">
                     <Score
                       scoreEnergy={datas1.scoreEnergy}
@@ -110,7 +110,7 @@ export default function Comparatif() {
                   </div>
                   <button
                     onClick={clearDatas1}
-                    className="bg-slate-300 mt-6 rounded-2xl py-1 drop-shadow-sm px-5 w-fit mx-auto"
+                    className="bg-slate-300 mt-12 rounded-2xl py-1 drop-shadow-sm px-5 w-fit mx-auto"
                   >
                     Modifier le produit
                   </button>
@@ -129,10 +129,10 @@ export default function Comparatif() {
             ) : (
               datas2 && (
                 <div
-                  className="text-center bg-slate-200 py-12 border-4 px-10 rounded-lg mb-5"
+                  className="text-center bg-slate-200 py-4 border-4 px-10 rounded-lg mb-5"
                   style={{ borderColor: datas2Color }}
                 >
-                  <h2 className="text-lg text-center mb-5">
+                  <h2 className="text-lg text-center mb-10">
                     {datas2 && datas2.title}
                   </h2>
                   <div className="flex flex-col">
@@ -144,7 +144,7 @@ export default function Comparatif() {
                   </div>
                   <button
                     onClick={clearDatas2}
-                    className="bg-slate-300 mt-6 rounded-2xl py-1 drop-shadow-sm px-5 w-fit mx-auto"
+                    className="bg-slate-300 mt-12 rounded-2xl py-1 drop-shadow-sm px-5 w-fit mx-auto"
                   >
                     Modifier le produit
                   </button>

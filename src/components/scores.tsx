@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function Score(props: any) {
   const [scoreGlobal, setScoreGlobal] = useState("");
@@ -7,6 +8,14 @@ export default function Score(props: any) {
   const [colorEnergy, setColorEnergy] = useState("");
   const [colorCarbon, setColorCarbon] = useState("");
   const [colorRepair, setColorRepair] = useState("");
+  const [factor, setFactor] = useState(50);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.pathname === "/comparatif") {
+      setFactor(40);
+    }
+  }, [router.pathname]);
 
   useEffect(() => {
     if ((props.scoreEnergy + props.scoreCarbon + props.scoreRepair) / 3 <= 3) {
@@ -66,7 +75,7 @@ export default function Score(props: any) {
         <div
           className="py-3 pl-2 rounded-2xl"
           style={{
-            width: 50 * props.scoreEnergy,
+            width: factor * props.scoreEnergy,
             background: colorEnergy,
           }}
         ></div>
@@ -81,7 +90,7 @@ export default function Score(props: any) {
         <div
           className="py-3 pl-2 rounded-2xl"
           style={{
-            width: 50 * props.scoreCarbon,
+            width: factor * props.scoreCarbon,
             background: colorCarbon,
           }}
         ></div>
@@ -96,7 +105,7 @@ export default function Score(props: any) {
         <div
           className="py-3 pl-2 rounded-2xl"
           style={{
-            width: 50 * props.scoreRepair,
+            width: factor * props.scoreRepair,
             background: colorRepair,
           }}
         ></div>

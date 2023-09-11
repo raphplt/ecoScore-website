@@ -12,8 +12,10 @@ export default function Comparatif() {
   const [datas1, setDatas1]: any = useState([]);
   const [datas2, setDatas2]: any = useState([]);
   const router = useRouter();
-  const [datas1Color, setDatas1Color] = useState("gray");
-  const [datas2Color, setDatas2Color] = useState("gray");
+  const [borderColor1, setBorderColor1] = useState("gray");
+  const [borderColor2, setBorderColor2] = useState("gray");
+  const [bgColor1, setBgColor1] = useState("gray");
+  const [bgColor2, setBgColor2] = useState("gray");
 
   useEffect(() => {
     const item: any = localStorage.getItem("compare");
@@ -43,24 +45,32 @@ export default function Comparatif() {
         datas1.scoreEnergy + datas1.scoreCarbon + datas1.scoreRepair >
         datas2.scoreEnergy + datas2.scoreCarbon + datas2.scoreRepair
       ) {
-        setDatas1Color("green");
-        setDatas2Color("red");
+        setBorderColor1("var(--scores-green)");
+        setBorderColor2("var(--scores-red)");
+        setBgColor1("var(--scores-green-secondary)");
+        setBgColor2("var(--scores-red-secondary)");
       } else if (
         datas1.scoreEnergy + datas1.scoreCarbon + datas1.scoreRepair <
         datas2.scoreEnergy + datas2.scoreCarbon + datas2.scoreRepair
       ) {
-        setDatas1Color("red");
-        setDatas2Color("green");
+        setBorderColor1("var(--scores-red)");
+        setBorderColor2("var(--scores-green)");
+        setBgColor1("var(--scores-red-secondary)");
+        setBgColor2("var(--scores-green-secondary)");
       } else if (
         datas1.scoreEnergy + datas1.scoreCarbon + datas1.scoreRepair ===
         datas2.scoreEnergy + datas2.scoreCarbon + datas2.scoreRepair
       ) {
-        setDatas1Color("blue");
-        setDatas2Color("blue");
+        setBorderColor1("scores-blue");
+        setBorderColor2("scores-blue");
+        setBgColor1("var(--scores-blue-secondary)");
+        setBgColor2("var(--scores-blue-secondary)");
       }
     } else {
-      setDatas1Color("gray");
-      setDatas2Color("gray");
+      setBorderColor1("gray");
+      setBorderColor2("gray");
+      setBgColor1("gray");
+      setBgColor2("gray");
     }
   }, [datas1, datas2]);
 
@@ -70,15 +80,21 @@ export default function Comparatif() {
       <MetaData />
       <div
         className="w-1/2 h-[70vh] py-8 mx-auto shadow-md
-       bg-slate-100 mt-24 mb-64 rounded-xl"
+       bg-gray-200 mt-24 mb-64 rounded-xl"
       >
         <h1 className="text-center mb-10 text-2xl ">
           {!datas1 && !datas2 ? (
             <div>Comparatif</div>
           ) : (
-            <div>
-              <strong> {datas1 && datas1.title}</strong> &ensp; vs &ensp;
-              <strong>{datas2 && datas2.title}</strong>
+            <div className="flex">
+              <strong className="w-1/3 text-right">
+                {datas1 && datas1.title}
+              </strong>
+
+              <div className="w-1/3">&ensp; vs &ensp;</div>
+              <strong className="w-1/3 text-left">
+                {datas2 && datas2.title}
+              </strong>
             </div>
           )}
         </h1>
@@ -97,8 +113,11 @@ export default function Comparatif() {
             ) : (
               datas1 && (
                 <div
-                  className="text-center bg-slate-200 py-4 border-4 px-10 rounded-lg mb-5"
-                  style={{ borderColor: datas1Color }}
+                  className="text-center bg-slate-00 py-4 border-2 drop-shadow-md px-10 rounded-lg  mb-5"
+                  style={{
+                    borderColor: borderColor1,
+                    backgroundColor: bgColor1,
+                  }}
                 >
                   <h2 className="text-lg mb-10">{datas1 && datas1.title}</h2>
                   <div className="flex flex-col">
@@ -110,7 +129,7 @@ export default function Comparatif() {
                   </div>
                   <button
                     onClick={clearDatas1}
-                    className="bg-slate-300 mt-12 rounded-2xl py-1 drop-shadow-sm px-5 w-fit mx-auto"
+                    className="bg-slate-300 mt-24 rounded-2xl py-1 drop-shadow-sm px-5 w-fit mx-auto"
                   >
                     Modifier le produit
                   </button>
@@ -129,8 +148,11 @@ export default function Comparatif() {
             ) : (
               datas2 && (
                 <div
-                  className="text-center bg-slate-200 py-4 border-4 px-10 rounded-lg mb-5"
-                  style={{ borderColor: datas2Color }}
+                  className="text-center drop-shadow-md bg-slate-200 py-4 border-2 px-10 rounded-lg mb-5"
+                  style={{
+                    borderColor: borderColor2,
+                    backgroundColor: bgColor2,
+                  }}
                 >
                   <h2 className="text-lg text-center mb-10">
                     {datas2 && datas2.title}
@@ -144,7 +166,7 @@ export default function Comparatif() {
                   </div>
                   <button
                     onClick={clearDatas2}
-                    className="bg-slate-300 mt-12 rounded-2xl py-1 drop-shadow-sm px-5 w-fit mx-auto"
+                    className="bg-slate-300 mt-24 rounded-2xl py-1 drop-shadow-sm px-5 w-fit mx-auto"
                   >
                     Modifier le produit
                   </button>

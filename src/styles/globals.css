@@ -8,9 +8,14 @@
     --primary-color-dark: #2F2C2C;
     --secondary-color: #234D1F;
     --secondary-color-dark: #F2F2F2;
-    --scores-green: #68c95f;
-    --scores-red: #c43f3f;
+    --scores-green: #47b33e;
+    --scores-green-secondary: #ebf5ea;
+    --scores-red: #db4c4c;
+    --scores-red-secondary: #f0dfdf;
     --scores-yellow: #cece49;
+    --scores-yellow-secondary: #f7f7ea;
+    --scores-blue: #4c4cdb;
+    --scores-blue-secondary: #a6a6ff;
 }
 
 body::-webkit-scrollbar {

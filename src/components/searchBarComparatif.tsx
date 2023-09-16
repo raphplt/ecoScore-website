@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { api } from "../services/index";
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/dist/client/router";
-import { searchBar } from "@/services/products/products.services";
+import { searchBar } from "@/services/products/products.service";
 import Link from "next/link";
 
 export default function SearchBar() {

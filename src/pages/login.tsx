@@ -1,7 +1,7 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import MetaData from "@/components/metadatas";
-import { login } from "@/services/users/users.services";
+import { login } from "@/services/users/users.service";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";

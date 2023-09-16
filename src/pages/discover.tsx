@@ -4,9 +4,9 @@ import MetaData from "@/components/metadatas";
 import { useEffect, useState } from "react";
 import { Product } from "./resultats";
 import ProductCardSquare from "@/components/productCardSquare";
-import { fetchProducts } from "@/services/products/products.services";
+import { fetchProducts } from "@/services/products/products.service";
 import HeaderMobile from "@/components/headerMobile";
-import { fetchCategories } from "@/services/categories/categories.services";
+import { fetchCategories } from "@/services/categories/categories.service";
 import ProductCardTiny from "@/components/productCardTiny";
 
 export default function Discover() {

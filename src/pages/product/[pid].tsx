@@ -6,7 +6,7 @@ import Score from "@/components/scores";
 import {
   fetchProduct,
   fetchProducts,
-} from "@/services/products/products.services";
+} from "@/services/products/products.service";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";

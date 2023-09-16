@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { addTrendProduct } from "@/services/users/users.services";
+import { addTrendProduct } from "@/services/users/users.service";
 import { useRouter } from "next/router";
 
 export default function ProductCardTiny(props: any) {

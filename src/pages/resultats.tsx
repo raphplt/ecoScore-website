@@ -5,7 +5,7 @@ import Metadatas from "@/components/metadatas";
 import ProductCard from "@/components/productCard";
 import ProductCardSquare from "@/components/productCardSquare";
 import SearchBarResults from "@/components/searchBarResults";
-import { fetchProducts } from "@/services/products/products.services";
+import { fetchProducts } from "@/services/products/products.service";
 import { useContext, useEffect, useState } from "react";
 
 export interface Product {

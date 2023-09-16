@@ -5,7 +5,7 @@ import Image from "next/image";
 import SearchBar from "@/components/searchBar";
 import ShortCutButton from "@/components/shortcutButton";
 import { useEffect, useState } from "react";
-import { fetchCategories } from "@/services/categories/categories.services";
+import { fetchCategories } from "@/services/categories/categories.service";
 import HeaderMobile from "@/components/headerMobile";
 
 interface Category {

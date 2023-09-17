@@ -5,7 +5,7 @@ export default function Question(props: any) {
   };
 
   return (
-    <div key={props._id} className="mx-auto flex w-fit mt-48 flex-col">
+    <div key={props._id} className="mx-auto flex w-fit mt-24 flex-col">
       <h1 className="text-xl font-semibold mb-4">{props.title}</h1>
       <div className="flex flex-col items-center gap-5 mt-4">
         {props.answers.map((answer: any) => (

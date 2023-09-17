@@ -6,10 +6,12 @@ import { fetchQuizz } from "@/services/quizz/quizz.service";
 import { useState, useEffect } from "react";
 
 export default function Quizz() {
-  const [quizz, setQuizz]: any = useState([]);
+  const [quizz, setQuizz]: any = useState({});
   const [quizzId, setQuizzId]: any = useState(0);
   const [showQuizz, setShowQuizz] = useState(false);
   const [quizzDatas, setQuizzDatas] = useState([]);
+  // const [quizzStep, setQuizzStep] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +21,12 @@ export default function Quizz() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const size = window.innerWidth;
+      setWindowWidth(size);
+    }
+  }, []);
   const startQuizz = () => {
     setQuizzId(1);
     setShowQuizz(true);
@@ -29,18 +37,22 @@ export default function Quizz() {
       <MetaData />
       <Header />
       {!showQuizz && (
-        <div className="mx-auto flex bg-[#E2F1E3] w-fit flex-col gap-12 mt-24 text-center py-24 px-24 rounded-lg drop-shadow-md">
-          <h1 className="text-3xl font-libre">
-            Connaissez vous l`&apos;impact de vos achats en ligne sur la planète
-            ?
-          </h1>
-          <h2 className="text-xl">Répondez à notre quizz pour le savoir !</h2>
-          <button
-            onClick={startQuizz}
-            className="rounded-3xl mt-8 w-fit mx-auto drop-shadow-md px-20 py-3 bg-[#3f8039] hover:bg-[#59ad52] text-white"
-          >
-            Commencer
-          </button>
+        <div className="mx-auto flex bg-[#b6e9b9] w-2/3 h-[70vh] flex-col gap-12 mt-24 text-center py-24 px-24 rounded-xl drop-shadow-md">
+          <div className="flex items-start gap-20 flex-col mx-auto w-full">
+            <h1 className="text-4xl leading-relaxed w-1/3 text-[#20311f] text-left">
+              Connaissez vous l&apos;impact de vos achats en ligne sur la
+              planète ?
+            </h1>
+            <button
+              onClick={startQuizz}
+              className="group relative py-3 w-fit px-12 overflow-hidden rounded-lg bg-[#377431] text-lg shadow"
+            >
+              <div className="absolute inset-0 w-3 bg-[#49b440]  transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+              <span className="relative text-white group-hover:text-white">
+                Commencer
+              </span>
+            </button>
+          </div>
         </div>
       )}
       <div>
@@ -53,12 +65,14 @@ export default function Quizz() {
           </div>
         ) : null}
       </div>
-      <div className="h-[90vh]">
+      <div className="h-[100vh]">
         {quizz &&
           showQuizz &&
-          quizz
-            .slice(quizzId - 1, quizzId)
-            .map((quizz: any) => (
+          quizz.slice(quizzId - 1, quizzId).map((quizz: any) => (
+            <div
+              key={quizz._id}
+              className="flex flex-col h-full py-24 justify-between"
+            >
               <Question
                 key={quizz._id}
                 {...quizz}
@@ -67,7 +81,17 @@ export default function Quizz() {
                 quizzDatas={quizzDatas}
                 setQuizzDatas={setQuizzDatas}
               />
-            ))}
+              <div className="h-6 w-full bg-slate-300">
+                <div
+                  className="h-6 bg-[#57bd61] rounded-r-xl"
+                  style={{
+                    width:
+                      (quizzId - 1) * (windowWidth / Object.keys(quizz).length),
+                  }}
+                ></div>
+              </div>
+            </div>
+          ))}
       </div>
       <Footer />
     </div>

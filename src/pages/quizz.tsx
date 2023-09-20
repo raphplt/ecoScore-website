@@ -62,6 +62,7 @@ export default function Quizz() {
               Merci d&apos;avoir répondu à notre quizz !
             </h1>
             <div> Vos réponses :{JSON.stringify(quizzDatas)}</div>
+            <div>Nos conseils</div>
           </div>
         ) : null}
       </div>

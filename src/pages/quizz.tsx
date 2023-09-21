@@ -61,9 +61,8 @@ export default function Quizz() {
             <h1 className="text-3xl font-libre text-center mt-24">
               Merci d&apos;avoir répondu à notre quizz !
             </h1>
-            <div className="w-1/2 text-center mx-auto mt-24">
-              Vos réponses :{JSON.stringify(quizzDatas)}
-            </div>
+            <div> Vos réponses :{JSON.stringify(quizzDatas)}</div>
+            <div>Nos conseils</div>
           </div>
         ) : null}
       </div>

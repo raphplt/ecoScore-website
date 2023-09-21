@@ -67,10 +67,10 @@ export default function Product() {
           </button>
         </div>
       </div>
-      <div className="w-10/12 mx-auto mt-24">
+      <div className="w-3/4 mx-auto mt-24">
         <h2 className="text-2xl">Voir plus</h2>
-        <div className="w-32 h-[1px] bg-slate-500"></div>
-        <div className="flex items-start gap-12 mt-4 overflow-scroll overflow-y-hidden pb-4">
+        <div className="w-full my-3 mb-5 h-[1px] bg-slate-300"></div>
+        <div className="flex items-start gap-6 mt-4 overflow-scroll overflow-y-hidden pb-4">
           {datas &&
             datas.map((result: any) => (
               <ProductCardSquare

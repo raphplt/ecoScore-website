@@ -61,7 +61,9 @@ export default function Quizz() {
             <h1 className="text-3xl font-libre text-center mt-24">
               Merci d&apos;avoir répondu à notre quizz !
             </h1>
-            <div> Vos réponses :{JSON.stringify(quizzDatas)}</div>
+            <div className="w-1/2 text-center mx-auto mt-24">
+              Vos réponses :{JSON.stringify(quizzDatas)}
+            </div>
           </div>
         ) : null}
       </div>
@@ -86,14 +88,16 @@ export default function Quizz() {
                   className="h-6 bg-[#57bd61] rounded-r-xl"
                   style={{
                     width:
-                      (quizzId - 1) * (windowWidth / Object.keys(quizz).length),
+                      (quizzId - 1) *
+                      ((windowWidth - windowWidth * 0.05) /
+                        Object.keys(quizz).length),
                   }}
                 ></div>
               </div>
             </div>
           ))}
       </div>
-      <Footer />
+      {!showQuizz && <Footer />}
     </div>
   );
 }

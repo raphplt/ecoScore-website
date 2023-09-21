@@ -87,14 +87,16 @@ export default function Quizz() {
                   className="h-6 bg-[#57bd61] rounded-r-xl"
                   style={{
                     width:
-                      (quizzId - 1) * (windowWidth / Object.keys(quizz).length),
+                      (quizzId - 1) *
+                      ((windowWidth - windowWidth * 0.05) /
+                        Object.keys(quizz).length),
                   }}
                 ></div>
               </div>
             </div>
           ))}
       </div>
-      <Footer />
+      {!showQuizz && <Footer />}
     </div>
   );
 }
